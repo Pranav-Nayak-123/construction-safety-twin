@@ -38,6 +38,11 @@ tracker:
   track_high_threshold: 0.45
   track_low_threshold: 0.10
   new_track_threshold: 0.55
+  # Crane loads, fire and smoke score far lower than people (often 0.3-0.5): with the
+  # people thresholds a load never started a track and R7 never saw it.
+  hazard_classes: [suspended_load, fire, smoke]
+  hazard_track_high_threshold: 0.25
+  hazard_new_track_threshold: 0.30
   match_threshold: 0.80
   buffer_seconds: 3.0
   # Re-link a worker's track after occlusions longer than the buffer: motion, size and

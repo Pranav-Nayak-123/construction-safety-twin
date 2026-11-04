@@ -1,0 +1,47 @@
+{
+ "candidate": [
+  {
+   "rule": "R7",
+   "worker": "6",
+   "start": 0.0,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "39",
+   "start": 49.2,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "45",
+   "start": 54.7,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "72",
+   "start": 96.4,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "80",
+   "start": 111.5,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "82",
+   "start": 112.2,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "97",
+   "start": 128.4,
+   "evidence": "weak"
+  }
+ ],
+ "current": []
+}

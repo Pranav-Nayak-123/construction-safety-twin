@@ -37,6 +37,7 @@ CLASS_ROLES = {
     "no_helmet": "no_helmet",
     "vest": "vest",
     "none": "no_vest",
+    "no_vest": "no_vest",  # the November 2026 edition renamed `none`
 }
 
 

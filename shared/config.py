@@ -48,6 +48,11 @@ class TrackerConfig(StrictModel):
     new_track_threshold: float
     match_threshold: float
     buffer_seconds: float
+    # Hazards (crane loads, fire, smoke) score lower than people: their own tracker may
+    # start tracks from weaker detections. None = track them with the thresholds above.
+    hazard_classes: list[str] = []
+    hazard_track_high_threshold: float | None = None
+    hazard_new_track_threshold: float | None = None
 
 
 class PPEConfig(StrictModel):

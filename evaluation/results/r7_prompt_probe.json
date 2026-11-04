@@ -1,0 +1,2188 @@
+{
+ "clips": [
+  {
+   "filename": "veo3.1_0001.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.035225167870521545,
+    "suspended load": 0.20155833661556244,
+    "load hanging from a crane": 0.09511732310056686,
+    "crane lifting a load": 0.5690873861312866,
+    "hoisted load": 0.12901493906974792,
+    "hanging load": 0.12936212122440338,
+    "lifted cargo": 0.14016857743263245,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.26333919167518616,
+    "bundle of steel bars": 0.017511576414108276,
+    "rebar bundle": 0.08017273247241974,
+    "concrete bucket": 0.013612190261483192,
+    "pallet": 0.0,
+    "precast concrete panel": 0.06343962252140045,
+    "shipping container": 0.11706215143203735,
+    "wooden crate": 0.12007389217615128,
+    "load on crane hook": 0.055720891803503036,
+    "construction material lifted by crane": 0.7645912766456604,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0002.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.020672190934419632,
+    "suspended load": 0.6470223069190979,
+    "load hanging from a crane": 0.059549666941165924,
+    "crane lifting a load": 0.14856843650341034,
+    "hoisted load": 0.2089635133743286,
+    "hanging load": 0.06749516725540161,
+    "lifted cargo": 0.19674721360206604,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.10057730972766876,
+    "bundle of steel bars": 0.18245910108089447,
+    "rebar bundle": 0.5471564531326294,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.03219049423933029,
+    "shipping container": 0.9117815494537354,
+    "wooden crate": 0.36512964963912964,
+    "load on crane hook": 0.016329938545823097,
+    "construction material lifted by crane": 0.19154924154281616,
+    "steel pipe bundle": 0.014940137043595314
+   }
+  },
+  {
+   "filename": "veo3.1_0011.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.19215016067028046,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.05645260587334633,
+    "hoisted load": 0.012585701420903206,
+    "hanging load": 0.0,
+    "lifted cargo": 0.5779657959938049,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.2263098955154419,
+    "bundle of steel bars": 0.06335988640785217,
+    "rebar bundle": 0.2322694957256317,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.6689292192459106,
+    "shipping container": 0.9412705898284912,
+    "wooden crate": 0.19686420261859894,
+    "load on crane hook": 0.019113054499030113,
+    "construction material lifted by crane": 0.656362771987915,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0012.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.4774749279022217,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.05851462483406067,
+    "hoisted load": 0.39799511432647705,
+    "hanging load": 0.0,
+    "lifted cargo": 0.3550454080104828,
+    "hook block": 0.0,
+    "lifting sling": 0.02348269335925579,
+    "steel beam": 0.5133153796195984,
+    "bundle of steel bars": 0.07570775598287582,
+    "rebar bundle": 0.6760050654411316,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.07533389329910278,
+    "shipping container": 0.5142701864242554,
+    "wooden crate": 0.031146593391895294,
+    "load on crane hook": 0.021627437323331833,
+    "construction material lifted by crane": 0.6805194020271301,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0015.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.4175604283809662,
+    "load hanging from a crane": 0.048100121319293976,
+    "crane lifting a load": 0.5790545344352722,
+    "hoisted load": 0.36821043491363525,
+    "hanging load": 0.0,
+    "lifted cargo": 0.04038097336888313,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.5687414407730103,
+    "bundle of steel bars": 0.048677630722522736,
+    "rebar bundle": 0.6264656186103821,
+    "concrete bucket": 0.0,
+    "pallet": 0.06523492932319641,
+    "precast concrete panel": 0.175722137093544,
+    "shipping container": 0.8468314409255981,
+    "wooden crate": 0.09668638557195663,
+    "load on crane hook": 0.40235015749931335,
+    "construction material lifted by crane": 0.6670843362808228,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0018.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.2243966907262802,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.4323713481426239,
+    "hoisted load": 0.2649374008178711,
+    "hanging load": 0.0,
+    "lifted cargo": 0.5851201415061951,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.34319379925727844,
+    "bundle of steel bars": 0.10547585785388947,
+    "rebar bundle": 0.5499909520149231,
+    "concrete bucket": 0.016682740300893784,
+    "pallet": 0.0,
+    "precast concrete panel": 0.6585067510604858,
+    "shipping container": 0.7824810743331909,
+    "wooden crate": 0.09170656651258469,
+    "load on crane hook": 0.06885053962469101,
+    "construction material lifted by crane": 0.3564665615558624,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0023.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.6304223537445068,
+    "load hanging from a crane": 0.02773841843008995,
+    "crane lifting a load": 0.44867581129074097,
+    "hoisted load": 0.28835219144821167,
+    "hanging load": 0.022149240598082542,
+    "lifted cargo": 0.19452303647994995,
+    "hook block": 0.010285358875989914,
+    "lifting sling": 0.0,
+    "steel beam": 0.574558675289154,
+    "bundle of steel bars": 0.06161874160170555,
+    "rebar bundle": 0.11706008017063141,
+    "concrete bucket": 0.07505860179662704,
+    "pallet": 0.0,
+    "precast concrete panel": 0.0380723774433136,
+    "shipping container": 0.18163332343101501,
+    "wooden crate": 0.160540372133255,
+    "load on crane hook": 0.20377978682518005,
+    "construction material lifted by crane": 0.51276695728302,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0024.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.12643156945705414,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.28437063097953796,
+    "hoisted load": 0.22997382283210754,
+    "hanging load": 0.0,
+    "lifted cargo": 0.21695588529109955,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.31191009283065796,
+    "bundle of steel bars": 0.12410246580839157,
+    "rebar bundle": 0.7179061770439148,
+    "concrete bucket": 0.04110696539282799,
+    "pallet": 0.05481282249093056,
+    "precast concrete panel": 0.05771055072546005,
+    "shipping container": 0.25958672165870667,
+    "wooden crate": 0.2600516676902771,
+    "load on crane hook": 0.26201966404914856,
+    "construction material lifted by crane": 0.46898752450942993,
+    "steel pipe bundle": 0.02444702945649624
+   }
+  },
+  {
+   "filename": "veo3.1_0027.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.010747034102678299,
+    "suspended load": 0.5935315489768982,
+    "load hanging from a crane": 0.017924025654792786,
+    "crane lifting a load": 0.6375831961631775,
+    "hoisted load": 0.08831458538770676,
+    "hanging load": 0.022877728566527367,
+    "lifted cargo": 0.4444548189640045,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.3023196756839752,
+    "bundle of steel bars": 0.1662376970052719,
+    "rebar bundle": 0.7690815925598145,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.11727245897054672,
+    "shipping container": 0.20505684614181519,
+    "wooden crate": 0.13630272448062897,
+    "load on crane hook": 0.17818273603916168,
+    "construction material lifted by crane": 0.6784871220588684,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0029.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.04967143014073372,
+    "load hanging from a crane": 0.0228770449757576,
+    "crane lifting a load": 0.13013269007205963,
+    "hoisted load": 0.6189781427383423,
+    "hanging load": 0.0,
+    "lifted cargo": 0.4903411865234375,
+    "hook block": 0.017909996211528778,
+    "lifting sling": 0.012232732959091663,
+    "steel beam": 0.03471141681075096,
+    "bundle of steel bars": 0.19115141034126282,
+    "rebar bundle": 0.5252477526664734,
+    "concrete bucket": 0.05969627946615219,
+    "pallet": 0.0,
+    "precast concrete panel": 0.6182140111923218,
+    "shipping container": 0.7288879156112671,
+    "wooden crate": 0.010126023553311825,
+    "load on crane hook": 0.41225558519363403,
+    "construction material lifted by crane": 0.7718742489814758,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0031.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.013934597373008728,
+    "suspended load": 0.7838728427886963,
+    "load hanging from a crane": 0.02170735038816929,
+    "crane lifting a load": 0.42258864641189575,
+    "hoisted load": 0.1734418421983719,
+    "hanging load": 0.013274474069476128,
+    "lifted cargo": 0.2976732850074768,
+    "hook block": 0.010213189758360386,
+    "lifting sling": 0.0,
+    "steel beam": 0.015816017985343933,
+    "bundle of steel bars": 0.017009099945425987,
+    "rebar bundle": 0.8459025025367737,
+    "concrete bucket": 0.05457555130124092,
+    "pallet": 0.0,
+    "precast concrete panel": 0.06731124967336655,
+    "shipping container": 0.5666022300720215,
+    "wooden crate": 0.013372097164392471,
+    "load on crane hook": 0.34142398834228516,
+    "construction material lifted by crane": 0.5029933452606201,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0032.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.08299044519662857,
+    "load hanging from a crane": 0.0407828763127327,
+    "crane lifting a load": 0.13321466743946075,
+    "hoisted load": 0.18072940409183502,
+    "hanging load": 0.013377496041357517,
+    "lifted cargo": 0.2532646358013153,
+    "hook block": 0.0,
+    "lifting sling": 0.03562799096107483,
+    "steel beam": 0.29861119389533997,
+    "bundle of steel bars": 0.29048195481300354,
+    "rebar bundle": 0.5553464293479919,
+    "concrete bucket": 0.028069740161299706,
+    "pallet": 0.0,
+    "precast concrete panel": 0.30901721119880676,
+    "shipping container": 0.1296035647392273,
+    "wooden crate": 0.010378897190093994,
+    "load on crane hook": 0.1734619140625,
+    "construction material lifted by crane": 0.5169617533683777,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0033.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.5669794678688049,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.0323396772146225,
+    "hoisted load": 0.0,
+    "hanging load": 0.011865598149597645,
+    "lifted cargo": 0.0210406556725502,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.5980637073516846,
+    "bundle of steel bars": 0.04599430412054062,
+    "rebar bundle": 0.5634136199951172,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.03035288117825985,
+    "shipping container": 0.16484875977039337,
+    "wooden crate": 0.3207770586013794,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.6426705718040466,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0047.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.012208672240376472,
+    "suspended load": 0.1576555371284485,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.13000482320785522,
+    "hoisted load": 0.2728366255760193,
+    "hanging load": 0.03549839183688164,
+    "lifted cargo": 0.5134404897689819,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.08852389454841614,
+    "bundle of steel bars": 0.19794288277626038,
+    "rebar bundle": 0.36509716510772705,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.6495701670646667,
+    "shipping container": 0.23061268031597137,
+    "wooden crate": 0.299032598733902,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.6257811784744263,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0050.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.02384418249130249,
+    "load hanging from a crane": 0.010882610455155373,
+    "crane lifting a load": 0.5933884382247925,
+    "hoisted load": 0.5748336911201477,
+    "hanging load": 0.0,
+    "lifted cargo": 0.5813056826591492,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.14859798550605774,
+    "bundle of steel bars": 0.04809487983584404,
+    "rebar bundle": 0.06699182093143463,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.01533068809658289,
+    "shipping container": 0.40686172246932983,
+    "wooden crate": 0.02668537013232708,
+    "load on crane hook": 0.02556070126593113,
+    "construction material lifted by crane": 0.27385497093200684,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0056.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.1059233620762825,
+    "load hanging from a crane": 0.011931763030588627,
+    "crane lifting a load": 0.4116286039352417,
+    "hoisted load": 0.3594866394996643,
+    "hanging load": 0.02847331017255783,
+    "lifted cargo": 0.3088007867336273,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.12742935121059418,
+    "bundle of steel bars": 0.49080193042755127,
+    "rebar bundle": 0.7251957654953003,
+    "concrete bucket": 0.0,
+    "pallet": 0.02679106779396534,
+    "precast concrete panel": 0.12158874422311783,
+    "shipping container": 0.05108758807182312,
+    "wooden crate": 0.15895330905914307,
+    "load on crane hook": 0.17881551384925842,
+    "construction material lifted by crane": 0.541990339756012,
+    "steel pipe bundle": 0.025029536336660385
+   }
+  },
+  {
+   "filename": "veo3.1_0057.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.08939527720212936,
+    "load hanging from a crane": 0.028364168480038643,
+    "crane lifting a load": 0.17607203125953674,
+    "hoisted load": 0.08465563505887985,
+    "hanging load": 0.0704609677195549,
+    "lifted cargo": 0.25347551703453064,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.02350669354200363,
+    "bundle of steel bars": 0.05277949199080467,
+    "rebar bundle": 0.3589402735233307,
+    "concrete bucket": 0.0,
+    "pallet": 0.04234028980135918,
+    "precast concrete panel": 0.053440943360328674,
+    "shipping container": 0.05645525082945824,
+    "wooden crate": 0.03370169177651405,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.2510031461715698,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0060.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.013611728325486183,
+    "suspended load": 0.10552878677845001,
+    "load hanging from a crane": 0.04713594540953636,
+    "crane lifting a load": 0.25789228081703186,
+    "hoisted load": 0.22670306265354156,
+    "hanging load": 0.033968836069107056,
+    "lifted cargo": 0.31779685616493225,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.010268068872392178,
+    "bundle of steel bars": 0.06232301518321037,
+    "rebar bundle": 0.4077209532260895,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.351150244474411,
+    "shipping container": 0.8357917666435242,
+    "wooden crate": 0.14324036240577698,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.5555922985076904,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0064.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.060179952532052994,
+    "load hanging from a crane": 0.02306838519871235,
+    "crane lifting a load": 0.5236325263977051,
+    "hoisted load": 0.03418385982513428,
+    "hanging load": 0.0,
+    "lifted cargo": 0.05657978728413582,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.050448961555957794,
+    "bundle of steel bars": 0.0360652357339859,
+    "rebar bundle": 0.39877405762672424,
+    "concrete bucket": 0.034443844109773636,
+    "pallet": 0.0,
+    "precast concrete panel": 0.012075149454176426,
+    "shipping container": 0.07935609668493271,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.32579007744789124,
+    "steel pipe bundle": 0.029423143714666367
+   }
+  },
+  {
+   "filename": "veo3.1_0065.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.03399394452571869,
+    "suspended load": 0.2828122675418854,
+    "load hanging from a crane": 0.013781385496258736,
+    "crane lifting a load": 0.4839194416999817,
+    "hoisted load": 0.6537160873413086,
+    "hanging load": 0.0,
+    "lifted cargo": 0.389132022857666,
+    "hook block": 0.0,
+    "lifting sling": 0.052952300757169724,
+    "steel beam": 0.8460050821304321,
+    "bundle of steel bars": 0.07769180089235306,
+    "rebar bundle": 0.15823455154895782,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.19631877541542053,
+    "shipping container": 0.30575260519981384,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.2700619101524353,
+    "construction material lifted by crane": 0.7418366074562073,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0066.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.09254775941371918,
+    "load hanging from a crane": 0.014750343747437,
+    "crane lifting a load": 0.03103647567331791,
+    "hoisted load": 0.021943487226963043,
+    "hanging load": 0.024887753650546074,
+    "lifted cargo": 0.23151680827140808,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.16497142612934113,
+    "bundle of steel bars": 0.015722913667559624,
+    "rebar bundle": 0.16543109714984894,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.027378089725971222,
+    "shipping container": 0.5864670872688293,
+    "wooden crate": 0.10615678131580353,
+    "load on crane hook": 0.03008071333169937,
+    "construction material lifted by crane": 0.19109730422496796,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0071.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.060346126556396484,
+    "suspended load": 0.08819034695625305,
+    "load hanging from a crane": 0.01248038187623024,
+    "crane lifting a load": 0.3460851311683655,
+    "hoisted load": 0.14707313477993011,
+    "hanging load": 0.01660454086959362,
+    "lifted cargo": 0.3380850553512573,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.589933454990387,
+    "bundle of steel bars": 0.05053400248289108,
+    "rebar bundle": 0.44608819484710693,
+    "concrete bucket": 0.07637457549571991,
+    "pallet": 0.0,
+    "precast concrete panel": 0.27172455191612244,
+    "shipping container": 0.3382815718650818,
+    "wooden crate": 0.013780632987618446,
+    "load on crane hook": 0.07044560462236404,
+    "construction material lifted by crane": 0.4823721945285797,
+    "steel pipe bundle": 0.014560182578861713
+   }
+  },
+  {
+   "filename": "veo3.1_0075.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.12874512374401093,
+    "load hanging from a crane": 0.050814222544431686,
+    "crane lifting a load": 0.2280355989933014,
+    "hoisted load": 0.19154128432273865,
+    "hanging load": 0.0,
+    "lifted cargo": 0.07761789113283157,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.5317800045013428,
+    "bundle of steel bars": 0.03261230140924454,
+    "rebar bundle": 0.07006262987852097,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.03370603919029236,
+    "shipping container": 0.03993062302470207,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.03896838799118996,
+    "construction material lifted by crane": 0.7948196530342102,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0079.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.03212999552488327,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.5262167453765869,
+    "hoisted load": 0.5128327012062073,
+    "hanging load": 0.0,
+    "lifted cargo": 0.23848454654216766,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.0,
+    "bundle of steel bars": 0.02339816465973854,
+    "rebar bundle": 0.044642459601163864,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.014113632030785084,
+    "shipping container": 0.16655530035495758,
+    "wooden crate": 0.307149738073349,
+    "load on crane hook": 0.0326760895550251,
+    "construction material lifted by crane": 0.556896448135376,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0088.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.06538449227809906,
+    "load hanging from a crane": 0.08877800405025482,
+    "crane lifting a load": 0.6255850791931152,
+    "hoisted load": 0.08628234267234802,
+    "hanging load": 0.0,
+    "lifted cargo": 0.5268118381500244,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.39289358258247375,
+    "bundle of steel bars": 0.15184350311756134,
+    "rebar bundle": 0.6550902128219604,
+    "concrete bucket": 0.01295554731041193,
+    "pallet": 0.0,
+    "precast concrete panel": 0.13024263083934784,
+    "shipping container": 0.305520236492157,
+    "wooden crate": 0.33190128207206726,
+    "load on crane hook": 0.13463762402534485,
+    "construction material lifted by crane": 0.5584445595741272,
+    "steel pipe bundle": 0.06968782842159271
+   }
+  },
+  {
+   "filename": "veo3.1_0089.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.04661582410335541,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.6853293180465698,
+    "hoisted load": 0.2240549474954605,
+    "hanging load": 0.018181512132287025,
+    "lifted cargo": 0.539758026599884,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.43484070897102356,
+    "bundle of steel bars": 0.13365355134010315,
+    "rebar bundle": 0.650540292263031,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.1384466588497162,
+    "shipping container": 0.29746735095977783,
+    "wooden crate": 0.4142109155654907,
+    "load on crane hook": 0.10221995413303375,
+    "construction material lifted by crane": 0.5150646567344666,
+    "steel pipe bundle": 0.09599850326776505
+   }
+  },
+  {
+   "filename": "veo3.1_0093.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.16210782527923584,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.500802755355835,
+    "hoisted load": 0.027301499620079994,
+    "hanging load": 0.0,
+    "lifted cargo": 0.5381056070327759,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.5220920443534851,
+    "bundle of steel bars": 0.022696496918797493,
+    "rebar bundle": 0.08096224814653397,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.3512532711029053,
+    "shipping container": 0.15127937495708466,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.06933955103158951,
+    "construction material lifted by crane": 0.4800577461719513,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0101.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.03453778475522995,
+    "load hanging from a crane": 0.026445118710398674,
+    "crane lifting a load": 0.435200035572052,
+    "hoisted load": 0.05889088660478592,
+    "hanging load": 0.021492406725883484,
+    "lifted cargo": 0.6244185566902161,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.26478737592697144,
+    "bundle of steel bars": 0.038586512207984924,
+    "rebar bundle": 0.06403787434101105,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.06744896620512009,
+    "shipping container": 0.3027307689189911,
+    "wooden crate": 0.3362997770309448,
+    "load on crane hook": 0.06611422449350357,
+    "construction material lifted by crane": 0.701672375202179,
+    "steel pipe bundle": 0.011121630668640137
+   }
+  },
+  {
+   "filename": "veo3.1_0103.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.018870454281568527,
+    "suspended load": 0.031145617365837097,
+    "load hanging from a crane": 0.03508361428976059,
+    "crane lifting a load": 0.19784250855445862,
+    "hoisted load": 0.03509921208024025,
+    "hanging load": 0.0,
+    "lifted cargo": 0.7085234522819519,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.44802650809288025,
+    "bundle of steel bars": 0.03724811598658562,
+    "rebar bundle": 0.038670554757118225,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.09654787927865982,
+    "shipping container": 0.6062757968902588,
+    "wooden crate": 0.7911680936813354,
+    "load on crane hook": 0.032687846571207047,
+    "construction material lifted by crane": 0.5733310580253601,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0105.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.0,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.040450360625982285,
+    "hoisted load": 0.21373338997364044,
+    "hanging load": 0.016022635623812675,
+    "lifted cargo": 0.024512071162462234,
+    "hook block": 0.021334052085876465,
+    "lifting sling": 0.0,
+    "steel beam": 0.8862798810005188,
+    "bundle of steel bars": 0.23084205389022827,
+    "rebar bundle": 0.3760935068130493,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.023444101214408875,
+    "shipping container": 0.24960565567016602,
+    "wooden crate": 0.1380411684513092,
+    "load on crane hook": 0.07010208815336227,
+    "construction material lifted by crane": 0.8521667122840881,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0106.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.023542052134871483,
+    "suspended load": 0.055147934705019,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.11032429337501526,
+    "hoisted load": 0.1279335767030716,
+    "hanging load": 0.05591735988855362,
+    "lifted cargo": 0.8120781183242798,
+    "hook block": 0.0,
+    "lifting sling": 0.018732717260718346,
+    "steel beam": 0.08293812721967697,
+    "bundle of steel bars": 0.08398747444152832,
+    "rebar bundle": 0.1862785816192627,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.10158953815698624,
+    "shipping container": 0.5998805165290833,
+    "wooden crate": 0.5977500677108765,
+    "load on crane hook": 0.023058157414197922,
+    "construction material lifted by crane": 0.874330997467041,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0114.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.48718950152397156,
+    "load hanging from a crane": 0.01946387253701687,
+    "crane lifting a load": 0.6958922743797302,
+    "hoisted load": 0.04118643328547478,
+    "hanging load": 0.029610823839902878,
+    "lifted cargo": 0.4359974265098572,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.04400288313627243,
+    "bundle of steel bars": 0.036644089967012405,
+    "rebar bundle": 0.1343962550163269,
+    "concrete bucket": 0.0578562468290329,
+    "pallet": 0.0,
+    "precast concrete panel": 0.061409857124090195,
+    "shipping container": 0.6768636107444763,
+    "wooden crate": 0.10962430387735367,
+    "load on crane hook": 0.23480358719825745,
+    "construction material lifted by crane": 0.8498060703277588,
+    "steel pipe bundle": 0.034426942467689514
+   }
+  },
+  {
+   "filename": "veo3.1_0117.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.012902241200208664,
+    "load hanging from a crane": 0.031308647245168686,
+    "crane lifting a load": 0.02585260383784771,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.03604886680841446,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.6025547981262207,
+    "bundle of steel bars": 0.10515237599611282,
+    "rebar bundle": 0.46102175116539,
+    "concrete bucket": 0.0,
+    "pallet": 0.026002317667007446,
+    "precast concrete panel": 0.10730795562267303,
+    "shipping container": 0.15173335373401642,
+    "wooden crate": 0.031571030616760254,
+    "load on crane hook": 0.01532110944390297,
+    "construction material lifted by crane": 0.8044056296348572,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0120.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.0830574557185173,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.6007543802261353,
+    "hoisted load": 0.2122795581817627,
+    "hanging load": 0.18532033264636993,
+    "lifted cargo": 0.5885945558547974,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.18135777115821838,
+    "bundle of steel bars": 0.06050162762403488,
+    "rebar bundle": 0.4790872037410736,
+    "concrete bucket": 0.010272019542753696,
+    "pallet": 0.0,
+    "precast concrete panel": 0.054272446781396866,
+    "shipping container": 0.13067872822284698,
+    "wooden crate": 0.12918253242969513,
+    "load on crane hook": 0.010890142060816288,
+    "construction material lifted by crane": 0.7049893140792847,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0121.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.24529802799224854,
+    "load hanging from a crane": 0.027765359729528427,
+    "crane lifting a load": 0.6301220655441284,
+    "hoisted load": 0.1545911282300949,
+    "hanging load": 0.36511215567588806,
+    "lifted cargo": 0.5879218578338623,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.12898141145706177,
+    "bundle of steel bars": 0.07430264353752136,
+    "rebar bundle": 0.5493512153625488,
+    "concrete bucket": 0.016606176272034645,
+    "pallet": 0.0,
+    "precast concrete panel": 0.10600204020738602,
+    "shipping container": 0.16583901643753052,
+    "wooden crate": 0.12685127556324005,
+    "load on crane hook": 0.0136080551892519,
+    "construction material lifted by crane": 0.6936695575714111,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0123.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.10933978855609894,
+    "load hanging from a crane": 0.011133945547044277,
+    "crane lifting a load": 0.2050052434206009,
+    "hoisted load": 0.032399747520685196,
+    "hanging load": 0.05807298794388771,
+    "lifted cargo": 0.28456395864486694,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.01896282657980919,
+    "bundle of steel bars": 0.10181553661823273,
+    "rebar bundle": 0.6955388188362122,
+    "concrete bucket": 0.013163907453417778,
+    "pallet": 0.0,
+    "precast concrete panel": 0.015206090174615383,
+    "shipping container": 0.21739399433135986,
+    "wooden crate": 0.21033212542533875,
+    "load on crane hook": 0.0735451728105545,
+    "construction material lifted by crane": 0.5093272924423218,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "veo3.1_0124.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.013556001707911491,
+    "load hanging from a crane": 0.023084960877895355,
+    "crane lifting a load": 0.10222135484218597,
+    "hoisted load": 0.014289911836385727,
+    "hanging load": 0.0,
+    "lifted cargo": 0.38443470001220703,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.10053392499685287,
+    "bundle of steel bars": 0.06813124567270279,
+    "rebar bundle": 0.2701196074485779,
+    "concrete bucket": 0.03165362402796745,
+    "pallet": 0.0,
+    "precast concrete panel": 0.14608463644981384,
+    "shipping container": 0.018795771524310112,
+    "wooden crate": 0.014319212175905704,
+    "load on crane hook": 0.05896259844303131,
+    "construction material lifted by crane": 0.6154422760009766,
+    "steel pipe bundle": 0.010880710557103157
+   }
+  },
+  {
+   "filename": "wan2.6_0003.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.012012646533548832,
+    "load hanging from a crane": 0.021386664360761642,
+    "crane lifting a load": 0.25737953186035156,
+    "hoisted load": 0.03539073467254639,
+    "hanging load": 0.0,
+    "lifted cargo": 0.2215762734413147,
+    "hook block": 0.0,
+    "lifting sling": 0.010110568255186081,
+    "steel beam": 0.3705185055732727,
+    "bundle of steel bars": 0.028943538665771484,
+    "rebar bundle": 0.2899894416332245,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.4929778575897217,
+    "shipping container": 0.5314725041389465,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.09558606892824173,
+    "construction material lifted by crane": 0.4994952976703644,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.6_0006.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.12589611113071442,
+    "load hanging from a crane": 0.027579987421631813,
+    "crane lifting a load": 0.6270252466201782,
+    "hoisted load": 0.3535419702529907,
+    "hanging load": 0.0,
+    "lifted cargo": 0.10903941094875336,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.016289589926600456,
+    "bundle of steel bars": 0.0,
+    "rebar bundle": 0.2905767261981964,
+    "concrete bucket": 0.05046038702130318,
+    "pallet": 0.0,
+    "precast concrete panel": 0.012003256008028984,
+    "shipping container": 0.18218085169792175,
+    "wooden crate": 0.026723863556981087,
+    "load on crane hook": 0.0974031463265419,
+    "construction material lifted by crane": 0.3477395176887512,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.6_0007.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.021568752825260162,
+    "suspended load": 0.03846915438771248,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.43750450015068054,
+    "hoisted load": 0.2453729212284088,
+    "hanging load": 0.0,
+    "lifted cargo": 0.30507466197013855,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.7003949284553528,
+    "bundle of steel bars": 0.13082407414913177,
+    "rebar bundle": 0.2384447157382965,
+    "concrete bucket": 0.13621988892555237,
+    "pallet": 0.0,
+    "precast concrete panel": 0.055156830698251724,
+    "shipping container": 0.43174558877944946,
+    "wooden crate": 0.025048626586794853,
+    "load on crane hook": 0.027821842581033707,
+    "construction material lifted by crane": 0.2770477831363678,
+    "steel pipe bundle": 0.012465897016227245
+   }
+  },
+  {
+   "filename": "wan2.6_0008.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.028880318626761436,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.4190734326839447,
+    "hoisted load": 0.19627107679843903,
+    "hanging load": 0.0,
+    "lifted cargo": 0.3258114755153656,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.6523679494857788,
+    "bundle of steel bars": 0.17100372910499573,
+    "rebar bundle": 0.2537502944469452,
+    "concrete bucket": 0.14866484701633453,
+    "pallet": 0.0,
+    "precast concrete panel": 0.023373203352093697,
+    "shipping container": 0.5282522439956665,
+    "wooden crate": 0.034270234405994415,
+    "load on crane hook": 0.03943267837166786,
+    "construction material lifted by crane": 0.2637534439563751,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.6_0018.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.3289574980735779,
+    "load hanging from a crane": 0.02256365306675434,
+    "crane lifting a load": 0.010892695747315884,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.6908693313598633,
+    "hook block": 0.0,
+    "lifting sling": 0.031537603586912155,
+    "steel beam": 0.41639381647109985,
+    "bundle of steel bars": 0.07653006166219711,
+    "rebar bundle": 0.19443368911743164,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.07239688187837601,
+    "shipping container": 0.5073177218437195,
+    "wooden crate": 0.3925705552101135,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.25192564725875854,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.6_0020.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.7120595574378967,
+    "load hanging from a crane": 0.013628026470541954,
+    "crane lifting a load": 0.1436927169561386,
+    "hoisted load": 0.01656320132315159,
+    "hanging load": 0.0,
+    "lifted cargo": 0.23115883767604828,
+    "hook block": 0.03370501473546028,
+    "lifting sling": 0.0,
+    "steel beam": 0.21048042178153992,
+    "bundle of steel bars": 0.08622431010007858,
+    "rebar bundle": 0.44836610555648804,
+    "concrete bucket": 0.015718692913651466,
+    "pallet": 0.0,
+    "precast concrete panel": 0.8345665335655212,
+    "shipping container": 0.024817241355776787,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.5605306029319763,
+    "construction material lifted by crane": 0.6236802339553833,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0011.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.5753189325332642,
+    "load hanging from a crane": 0.010868504643440247,
+    "crane lifting a load": 0.05158024653792381,
+    "hoisted load": 0.02753891423344612,
+    "hanging load": 0.017072949558496475,
+    "lifted cargo": 0.03693821653723717,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.49016866087913513,
+    "bundle of steel bars": 0.09654704481363297,
+    "rebar bundle": 0.4887828230857849,
+    "concrete bucket": 0.02020331658422947,
+    "pallet": 0.0,
+    "precast concrete panel": 0.15983974933624268,
+    "shipping container": 0.1942041963338852,
+    "wooden crate": 0.0404915027320385,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.7582530379295349,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0013.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.07259804010391235,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.033260323107242584,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.09478206187486649,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.45103558897972107,
+    "bundle of steel bars": 0.08949974924325943,
+    "rebar bundle": 0.7502360343933105,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.3924161493778229,
+    "shipping container": 0.6463296413421631,
+    "wooden crate": 0.3350503444671631,
+    "load on crane hook": 0.010254369117319584,
+    "construction material lifted by crane": 0.4107954800128937,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0015.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.015170915052294731,
+    "load hanging from a crane": 0.02649301290512085,
+    "crane lifting a load": 0.03200265392661095,
+    "hoisted load": 0.017827043309807777,
+    "hanging load": 0.028728678822517395,
+    "lifted cargo": 0.0,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.05065269395709038,
+    "bundle of steel bars": 0.04312018305063248,
+    "rebar bundle": 0.15970581769943237,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.8204905390739441,
+    "shipping container": 0.0,
+    "wooden crate": 0.8439366817474365,
+    "load on crane hook": 0.052355632185935974,
+    "construction material lifted by crane": 0.7850965857505798,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0019.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.09365914016962051,
+    "load hanging from a crane": 0.02201714739203453,
+    "crane lifting a load": 0.025959141552448273,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.07728971540927887,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.28683948516845703,
+    "bundle of steel bars": 0.08465925604104996,
+    "rebar bundle": 0.6083468794822693,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.3884129822254181,
+    "shipping container": 0.6241114139556885,
+    "wooden crate": 0.20786313712596893,
+    "load on crane hook": 0.013951904140412807,
+    "construction material lifted by crane": 0.5233039855957031,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0021.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.5227575302124023,
+    "load hanging from a crane": 0.011260057799518108,
+    "crane lifting a load": 0.0,
+    "hoisted load": 0.026936989277601242,
+    "hanging load": 0.0,
+    "lifted cargo": 0.03505508601665497,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.6335371136665344,
+    "bundle of steel bars": 0.07438106834888458,
+    "rebar bundle": 0.1490643173456192,
+    "concrete bucket": 0.011364440433681011,
+    "pallet": 0.0,
+    "precast concrete panel": 0.24377356469631195,
+    "shipping container": 0.1614406704902649,
+    "wooden crate": 0.04067233204841614,
+    "load on crane hook": 0.018473397940397263,
+    "construction material lifted by crane": 0.7942948937416077,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0022.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.05818237364292145,
+    "load hanging from a crane": 0.024167902767658234,
+    "crane lifting a load": 0.2093268185853958,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.04101778194308281,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.3711087703704834,
+    "bundle of steel bars": 0.07269325852394104,
+    "rebar bundle": 0.14621125161647797,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.11006984859704971,
+    "shipping container": 0.9200016260147095,
+    "wooden crate": 0.08982683718204498,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.7399013638496399,
+    "steel pipe bundle": 0.016264913603663445
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0023.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.3990592360496521,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.6127046346664429,
+    "hoisted load": 0.14490631222724915,
+    "hanging load": 0.45570075511932373,
+    "lifted cargo": 0.5172168016433716,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.16001668572425842,
+    "bundle of steel bars": 0.0282133761793375,
+    "rebar bundle": 0.46346965432167053,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.030845405533909798,
+    "shipping container": 0.1509586125612259,
+    "wooden crate": 0.058583807200193405,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.6612001061439514,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0025.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.1139620989561081,
+    "load hanging from a crane": 0.016770804300904274,
+    "crane lifting a load": 0.5572771430015564,
+    "hoisted load": 0.04427774250507355,
+    "hanging load": 0.0,
+    "lifted cargo": 0.28362053632736206,
+    "hook block": 0.0,
+    "lifting sling": 0.010141846723854542,
+    "steel beam": 0.629076361656189,
+    "bundle of steel bars": 0.011334029957652092,
+    "rebar bundle": 0.8542616963386536,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.14270293712615967,
+    "shipping container": 0.5351586937904358,
+    "wooden crate": 0.011923725716769695,
+    "load on crane hook": 0.0182727612555027,
+    "construction material lifted by crane": 0.2640455961227417,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0029.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.0,
+    "load hanging from a crane": 0.0,
+    "crane lifting a load": 0.32723501324653625,
+    "hoisted load": 0.023405706509947777,
+    "hanging load": 0.03246190398931503,
+    "lifted cargo": 0.3617667257785797,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.12467789649963379,
+    "bundle of steel bars": 0.052938107401132584,
+    "rebar bundle": 0.7887033820152283,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.26299726963043213,
+    "shipping container": 0.11784647405147552,
+    "wooden crate": 0.11298393458127975,
+    "load on crane hook": 0.026957320049405098,
+    "construction material lifted by crane": 0.49431297183036804,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0034.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.06870248168706894,
+    "load hanging from a crane": 0.022026101127266884,
+    "crane lifting a load": 0.44162553548812866,
+    "hoisted load": 0.0673561692237854,
+    "hanging load": 0.0,
+    "lifted cargo": 0.4127088189125061,
+    "hook block": 0.0,
+    "lifting sling": 0.017410658299922943,
+    "steel beam": 0.42676061391830444,
+    "bundle of steel bars": 0.02056352235376835,
+    "rebar bundle": 0.2650126516819,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.35001489520072937,
+    "shipping container": 0.46155545115470886,
+    "wooden crate": 0.02626822702586651,
+    "load on crane hook": 0.4350631833076477,
+    "construction material lifted by crane": 0.2220027595758438,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0039.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.028229279443621635,
+    "load hanging from a crane": 0.010551121085882187,
+    "crane lifting a load": 0.0219410490244627,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.01599792018532753,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.14982376992702484,
+    "bundle of steel bars": 0.04026889055967331,
+    "rebar bundle": 0.03743477910757065,
+    "concrete bucket": 0.023316431790590286,
+    "pallet": 0.0,
+    "precast concrete panel": 0.05100766941905022,
+    "shipping container": 0.6805216670036316,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.02611095830798149,
+    "construction material lifted by crane": 0.28317680954933167,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0040.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.06180522218346596,
+    "load hanging from a crane": 0.030476991087198257,
+    "crane lifting a load": 0.03303421288728714,
+    "hoisted load": 0.012180733494460583,
+    "hanging load": 0.0,
+    "lifted cargo": 0.11436910927295685,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.09686627984046936,
+    "bundle of steel bars": 0.04828827828168869,
+    "rebar bundle": 0.06024092808365822,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.023018449544906616,
+    "shipping container": 0.01955801248550415,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.03156767785549164,
+    "construction material lifted by crane": 0.2365613728761673,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0049.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.03892851620912552,
+    "load hanging from a crane": 0.013621283695101738,
+    "crane lifting a load": 0.042036693543195724,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.0,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.13836579024791718,
+    "bundle of steel bars": 0.15213222801685333,
+    "rebar bundle": 0.24223889410495758,
+    "concrete bucket": 0.030021782964468002,
+    "pallet": 0.0,
+    "precast concrete panel": 0.06947210431098938,
+    "shipping container": 0.5352756381034851,
+    "wooden crate": 0.0,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.24898631870746613,
+    "steel pipe bundle": 0.01973535679280758
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0051.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.013625436462461948,
+    "suspended load": 0.0,
+    "load hanging from a crane": 0.042337194085121155,
+    "crane lifting a load": 0.11021678894758224,
+    "hoisted load": 0.17182008922100067,
+    "hanging load": 0.0,
+    "lifted cargo": 0.8593941926956177,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.1575821042060852,
+    "bundle of steel bars": 0.17199820280075073,
+    "rebar bundle": 0.3063282370567322,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.10169760137796402,
+    "shipping container": 0.43515878915786743,
+    "wooden crate": 0.3488515615463257,
+    "load on crane hook": 0.032996766269207,
+    "construction material lifted by crane": 0.4704661965370178,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0054.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.016833292320370674,
+    "suspended load": 0.011486190371215343,
+    "load hanging from a crane": 0.01689828559756279,
+    "crane lifting a load": 0.04420193284749985,
+    "hoisted load": 0.0,
+    "hanging load": 0.024295080453157425,
+    "lifted cargo": 0.6882337331771851,
+    "hook block": 0.012498600408434868,
+    "lifting sling": 0.033793676644563675,
+    "steel beam": 0.08714726567268372,
+    "bundle of steel bars": 0.15047398209571838,
+    "rebar bundle": 0.19355922937393188,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.8393413424491882,
+    "shipping container": 0.0,
+    "wooden crate": 0.8503598570823669,
+    "load on crane hook": 0.02997078187763691,
+    "construction material lifted by crane": 0.3313669264316559,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0055.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.22335143387317657,
+    "load hanging from a crane": 0.021519560366868973,
+    "crane lifting a load": 0.4091129004955292,
+    "hoisted load": 0.27097615599632263,
+    "hanging load": 0.028785333037376404,
+    "lifted cargo": 0.21206706762313843,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.039588406682014465,
+    "bundle of steel bars": 0.03638199716806412,
+    "rebar bundle": 0.04182051494717598,
+    "concrete bucket": 0.014513424597680569,
+    "pallet": 0.0,
+    "precast concrete panel": 0.07019384950399399,
+    "shipping container": 0.40902185440063477,
+    "wooden crate": 0.201736718416214,
+    "load on crane hook": 0.18558888137340546,
+    "construction material lifted by crane": 0.5123311281204224,
+    "steel pipe bundle": 0.019512027502059937
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0061.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.5517044067382812,
+    "load hanging from a crane": 0.022471735253930092,
+    "crane lifting a load": 0.01905950903892517,
+    "hoisted load": 0.023997224867343903,
+    "hanging load": 0.01418214850127697,
+    "lifted cargo": 0.04433447867631912,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.48994722962379456,
+    "bundle of steel bars": 0.1305091679096222,
+    "rebar bundle": 0.5505842566490173,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.23555028438568115,
+    "shipping container": 0.17250308394432068,
+    "wooden crate": 0.05359156057238579,
+    "load on crane hook": 0.0,
+    "construction material lifted by crane": 0.5906777381896973,
+    "steel pipe bundle": 0.014697108417749405
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0063.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.01147298701107502,
+    "load hanging from a crane": 0.031610943377017975,
+    "crane lifting a load": 0.047595564275979996,
+    "hoisted load": 0.0,
+    "hanging load": 0.0,
+    "lifted cargo": 0.12095225602388382,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.2988353669643402,
+    "bundle of steel bars": 0.15892678499221802,
+    "rebar bundle": 0.8377715349197388,
+    "concrete bucket": 0.012146895751357079,
+    "pallet": 0.0,
+    "precast concrete panel": 0.4222135543823242,
+    "shipping container": 0.5035850405693054,
+    "wooden crate": 0.3433389365673065,
+    "load on crane hook": 0.011334029957652092,
+    "construction material lifted by crane": 0.30076804757118225,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0065.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.018526004627346992,
+    "suspended load": 0.0184616856276989,
+    "load hanging from a crane": 0.0258907712996006,
+    "crane lifting a load": 0.04095476493239403,
+    "hoisted load": 0.0,
+    "hanging load": 0.022730113938450813,
+    "lifted cargo": 0.6702349185943604,
+    "hook block": 0.01668267697095871,
+    "lifting sling": 0.01509732473641634,
+    "steel beam": 0.07644201070070267,
+    "bundle of steel bars": 0.1684843897819519,
+    "rebar bundle": 0.2577163577079773,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.8110476136207581,
+    "shipping container": 0.0,
+    "wooden crate": 0.8406242728233337,
+    "load on crane hook": 0.0438765212893486,
+    "construction material lifted by crane": 0.741439700126648,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0066.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.0,
+    "load hanging from a crane": 0.02032000757753849,
+    "crane lifting a load": 0.012694576755166054,
+    "hoisted load": 0.03190383315086365,
+    "hanging load": 0.0,
+    "lifted cargo": 0.7889930009841919,
+    "hook block": 0.03297099843621254,
+    "lifting sling": 0.0,
+    "steel beam": 0.05999940633773804,
+    "bundle of steel bars": 0.44941288232803345,
+    "rebar bundle": 0.24928604066371918,
+    "concrete bucket": 0.01119060255587101,
+    "pallet": 0.0,
+    "precast concrete panel": 0.047803543508052826,
+    "shipping container": 0.30944111943244934,
+    "wooden crate": 0.19912481307983398,
+    "load on crane hook": 0.01989327371120453,
+    "construction material lifted by crane": 0.8535704016685486,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0073.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.4816780984401703,
+    "load hanging from a crane": 0.06122448667883873,
+    "crane lifting a load": 0.5420215725898743,
+    "hoisted load": 0.14414460957050323,
+    "hanging load": 0.4343870282173157,
+    "lifted cargo": 0.46955618262290955,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.4904749095439911,
+    "bundle of steel bars": 0.029981151223182678,
+    "rebar bundle": 0.43277519941329956,
+    "concrete bucket": 0.015469413250684738,
+    "pallet": 0.0,
+    "precast concrete panel": 0.08109568804502487,
+    "shipping container": 0.08325253427028656,
+    "wooden crate": 0.10134764015674591,
+    "load on crane hook": 0.017755158245563507,
+    "construction material lifted by crane": 0.6137840151786804,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0074.mp4",
+   "unsafe": true,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.41181477904319763,
+    "load hanging from a crane": 0.014488729648292065,
+    "crane lifting a load": 0.6634111404418945,
+    "hoisted load": 0.12694932520389557,
+    "hanging load": 0.0,
+    "lifted cargo": 0.037874870002269745,
+    "hook block": 0.0,
+    "lifting sling": 0.0,
+    "steel beam": 0.22524914145469666,
+    "bundle of steel bars": 0.09561888128519058,
+    "rebar bundle": 0.6359948515892029,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.030089786276221275,
+    "shipping container": 0.14128361642360687,
+    "wooden crate": 0.12732769548892975,
+    "load on crane hook": 0.016312619671225548,
+    "construction material lifted by crane": 0.5800431370735168,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0075.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.0,
+    "suspended load": 0.05037646368145943,
+    "load hanging from a crane": 0.022124944254755974,
+    "crane lifting a load": 0.015208562836050987,
+    "hoisted load": 0.04727380350232124,
+    "hanging load": 0.0,
+    "lifted cargo": 0.8030397891998291,
+    "hook block": 0.02853579632937908,
+    "lifting sling": 0.0,
+    "steel beam": 0.12185942381620407,
+    "bundle of steel bars": 0.36854660511016846,
+    "rebar bundle": 0.40292567014694214,
+    "concrete bucket": 0.0,
+    "pallet": 0.0,
+    "precast concrete panel": 0.05235842615365982,
+    "shipping container": 0.4630776345729828,
+    "wooden crate": 0.14403840899467468,
+    "load on crane hook": 0.01113718468695879,
+    "construction material lifted by crane": 0.8239424824714661,
+    "steel pipe bundle": 0.0
+   }
+  },
+  {
+   "filename": "wan2.2-14b_0077.mp4",
+   "unsafe": false,
+   "max_conf": {
+    "crane hook": 0.013511719182133675,
+    "suspended load": 0.01307693775743246,
+    "load hanging from a crane": 0.016148364171385765,
+    "crane lifting a load": 0.039157405495643616,
+    "hoisted load": 0.0,
+    "hanging load": 0.02333950437605381,
+    "lifted cargo": 0.6919853687286377,
+    "hook block": 0.013353338465094566,
+    "lifting sling": 0.032399896532297134,
+    "steel beam": 0.09684357792139053,
+    "bundle of steel bars": 0.11574667692184448,
+    "rebar bundle": 0.2012983113527298,
+    "concrete bucket": 0.0,
+    "pallet": 0.011716253124177456,
+    "precast concrete panel": 0.828992486000061,
+    "shipping container": 0.0,
+    "wooden crate": 0.8416963219642639,
+    "load on crane hook": 0.0338660292327404,
+    "construction material lifted by crane": 0.3223765790462494,
+    "steel pipe bundle": 0.035154808312654495
+   }
+  }
+ ],
+ "summary": {
+  "crane hook": {
+   "0.05": {
+    "unsafe_hit": 0.032,
+    "safe_hit": 0.0
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "suspended load": {
+   "0.05": {
+    "unsafe_hit": 0.742,
+    "safe_hit": 0.611
+   },
+   "0.1": {
+    "unsafe_hit": 0.516,
+    "safe_hit": 0.417
+   },
+   "0.15": {
+    "unsafe_hit": 0.484,
+    "safe_hit": 0.25
+   },
+   "0.2": {
+    "unsafe_hit": 0.387,
+    "safe_hit": 0.25
+   },
+   "0.3": {
+    "unsafe_hit": 0.29,
+    "safe_hit": 0.194
+   }
+  },
+  "load hanging from a crane": {
+   "0.05": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.028
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "crane lifting a load": {
+   "0.05": {
+    "unsafe_hit": 0.806,
+    "safe_hit": 0.639
+   },
+   "0.1": {
+    "unsafe_hit": 0.774,
+    "safe_hit": 0.583
+   },
+   "0.15": {
+    "unsafe_hit": 0.71,
+    "safe_hit": 0.417
+   },
+   "0.2": {
+    "unsafe_hit": 0.71,
+    "safe_hit": 0.361
+   },
+   "0.3": {
+    "unsafe_hit": 0.613,
+    "safe_hit": 0.278
+   }
+  },
+  "hoisted load": {
+   "0.05": {
+    "unsafe_hit": 0.645,
+    "safe_hit": 0.444
+   },
+   "0.1": {
+    "unsafe_hit": 0.581,
+    "safe_hit": 0.361
+   },
+   "0.15": {
+    "unsafe_hit": 0.452,
+    "safe_hit": 0.306
+   },
+   "0.2": {
+    "unsafe_hit": 0.355,
+    "safe_hit": 0.222
+   },
+   "0.3": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.111
+   }
+  },
+  "hanging load": {
+   "0.05": {
+    "unsafe_hit": 0.161,
+    "safe_hit": 0.111
+   },
+   "0.1": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.028
+   },
+   "0.15": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.097,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.097,
+    "safe_hit": 0.0
+   }
+  },
+  "lifted cargo": {
+   "0.05": {
+    "unsafe_hit": 0.839,
+    "safe_hit": 0.806
+   },
+   "0.1": {
+    "unsafe_hit": 0.71,
+    "safe_hit": 0.806
+   },
+   "0.15": {
+    "unsafe_hit": 0.677,
+    "safe_hit": 0.722
+   },
+   "0.2": {
+    "unsafe_hit": 0.613,
+    "safe_hit": 0.722
+   },
+   "0.3": {
+    "unsafe_hit": 0.548,
+    "safe_hit": 0.472
+   }
+  },
+  "hook block": {
+   "0.05": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "lifting sling": {
+   "0.05": {
+    "unsafe_hit": 0.032,
+    "safe_hit": 0.0
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "steel beam": {
+   "0.05": {
+    "unsafe_hit": 0.968,
+    "safe_hit": 0.778
+   },
+   "0.1": {
+    "unsafe_hit": 0.903,
+    "safe_hit": 0.583
+   },
+   "0.15": {
+    "unsafe_hit": 0.806,
+    "safe_hit": 0.417
+   },
+   "0.2": {
+    "unsafe_hit": 0.742,
+    "safe_hit": 0.361
+   },
+   "0.3": {
+    "unsafe_hit": 0.613,
+    "safe_hit": 0.25
+   }
+  },
+  "bundle of steel bars": {
+   "0.05": {
+    "unsafe_hit": 0.677,
+    "safe_hit": 0.639
+   },
+   "0.1": {
+    "unsafe_hit": 0.323,
+    "safe_hit": 0.389
+   },
+   "0.15": {
+    "unsafe_hit": 0.194,
+    "safe_hit": 0.278
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.139
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.083
+   }
+  },
+  "rebar bundle": {
+   "0.05": {
+    "unsafe_hit": 0.968,
+    "safe_hit": 0.917
+   },
+   "0.1": {
+    "unsafe_hit": 0.871,
+    "safe_hit": 0.833
+   },
+   "0.15": {
+    "unsafe_hit": 0.806,
+    "safe_hit": 0.778
+   },
+   "0.2": {
+    "unsafe_hit": 0.742,
+    "safe_hit": 0.667
+   },
+   "0.3": {
+    "unsafe_hit": 0.613,
+    "safe_hit": 0.472
+   }
+  },
+  "concrete bucket": {
+   "0.05": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.111
+   },
+   "0.1": {
+    "unsafe_hit": 0.065,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "pallet": {
+   "0.05": {
+    "unsafe_hit": 0.032,
+    "safe_hit": 0.028
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  },
+  "precast concrete panel": {
+   "0.05": {
+    "unsafe_hit": 0.677,
+    "safe_hit": 0.833
+   },
+   "0.1": {
+    "unsafe_hit": 0.548,
+    "safe_hit": 0.5
+   },
+   "0.15": {
+    "unsafe_hit": 0.355,
+    "safe_hit": 0.361
+   },
+   "0.2": {
+    "unsafe_hit": 0.29,
+    "safe_hit": 0.333
+   },
+   "0.3": {
+    "unsafe_hit": 0.258,
+    "safe_hit": 0.25
+   }
+  },
+  "shipping container": {
+   "0.05": {
+    "unsafe_hit": 0.968,
+    "safe_hit": 0.806
+   },
+   "0.1": {
+    "unsafe_hit": 0.903,
+    "safe_hit": 0.75
+   },
+   "0.15": {
+    "unsafe_hit": 0.839,
+    "safe_hit": 0.667
+   },
+   "0.2": {
+    "unsafe_hit": 0.613,
+    "safe_hit": 0.556
+   },
+   "0.3": {
+    "unsafe_hit": 0.516,
+    "safe_hit": 0.472
+   }
+  },
+  "wooden crate": {
+   "0.05": {
+    "unsafe_hit": 0.677,
+    "safe_hit": 0.583
+   },
+   "0.1": {
+    "unsafe_hit": 0.548,
+    "safe_hit": 0.556
+   },
+   "0.15": {
+    "unsafe_hit": 0.387,
+    "safe_hit": 0.361
+   },
+   "0.2": {
+    "unsafe_hit": 0.323,
+    "safe_hit": 0.306
+   },
+   "0.3": {
+    "unsafe_hit": 0.258,
+    "safe_hit": 0.222
+   }
+  },
+  "load on crane hook": {
+   "0.05": {
+    "unsafe_hit": 0.323,
+    "safe_hit": 0.444
+   },
+   "0.1": {
+    "unsafe_hit": 0.194,
+    "safe_hit": 0.25
+   },
+   "0.15": {
+    "unsafe_hit": 0.129,
+    "safe_hit": 0.25
+   },
+   "0.2": {
+    "unsafe_hit": 0.097,
+    "safe_hit": 0.167
+   },
+   "0.3": {
+    "unsafe_hit": 0.032,
+    "safe_hit": 0.111
+   }
+  },
+  "construction material lifted by crane": {
+   "0.05": {
+    "unsafe_hit": 1.0,
+    "safe_hit": 1.0
+   },
+   "0.1": {
+    "unsafe_hit": 1.0,
+    "safe_hit": 1.0
+   },
+   "0.15": {
+    "unsafe_hit": 1.0,
+    "safe_hit": 1.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.968,
+    "safe_hit": 0.972
+   },
+   "0.3": {
+    "unsafe_hit": 0.839,
+    "safe_hit": 0.806
+   }
+  },
+  "steel pipe bundle": {
+   "0.05": {
+    "unsafe_hit": 0.065,
+    "safe_hit": 0.0
+   },
+   "0.1": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.15": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.2": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   },
+   "0.3": {
+    "unsafe_hit": 0.0,
+    "safe_hit": 0.0
+   }
+  }
+ }
+}
