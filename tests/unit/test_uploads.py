@@ -205,3 +205,11 @@ def test_only_one_worker_runs_per_computer(tmp_path: Path) -> None:
     again = worker.single_instance(lock)  # released when the first one exits
     assert again is not None
     again.close()
+
+
+def test_every_site_page_has_the_light_dark_toggle(client: TestClient) -> None:
+    for path in ("/", "/upload", "/jobs/abcdef123456"):
+        page = client.get(path).text
+        assert "data-theme-toggle" in page, path
+        assert "localStorage.getItem('safety-theme')" in page, path  # the saved choice applies
+        assert ':root[data-theme="dark"]' in page, path  # a pick overrides the system theme
