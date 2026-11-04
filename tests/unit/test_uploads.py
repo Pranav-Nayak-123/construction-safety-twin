@@ -213,3 +213,48 @@ def test_every_site_page_has_the_light_dark_toggle(client: TestClient) -> None:
         assert "data-theme-toggle" in page, path
         assert "localStorage.getItem('safety-theme')" in page, path  # the saved choice applies
         assert ':root[data-theme="dark"]' in page, path  # a pick overrides the system theme
+
+
+@pytest.mark.parametrize(
+    "reply",
+    [TypeError("'<' not supported between instances of 'str' and 'int'"), {"message": "bad"}],
+)
+def test_review_summary_never_answers_500(
+    cloud: Any, client: TestClient, monkeypatch: pytest.MonkeyPatch, reply: Any
+) -> None:
+    def fake_fetch(run_id: str) -> Any:
+        if isinstance(reply, Exception):
+            raise reply
+        return reply
+
+    monkeypatch.setenv("SUPABASE_URL", "https://db.invalid")
+    monkeypatch.setattr(cloud, "fetch_supabase", fake_fetch)
+    cloud._review_cache.clear()
+    answer = client.get("/api/runs/upload-run/reviews")
+    assert answer.status_code == 502
+    assert "unavailable" in answer.json()["detail"]
+
+
+def test_review_rows_with_mixed_ids_and_gaps_are_summarised() -> None:
+    from evaluation.reviews import summarize
+
+    rows = [
+        {
+            "id": 3,
+            "created_at": "2026-11-01",
+            "incident_id": "a",
+            "verdict": "real",
+            "reviewer": "x",
+        },
+        {
+            "id": "u-9",
+            "created_at": "2026-11-01",
+            "incident_id": "a",
+            "verdict": "real",
+            "reviewer": "y",
+        },
+        {"id": 4, "created_at": None, "incident_id": "b", "verdict": None, "reviewer": "x"},
+        {"created_at": "2026-11-02", "verdict": "real", "reviewer": "x"},
+    ]
+    summary = summarize(rows, {"a": "R1", "b": "R3"})
+    assert summary["reviewers"] == 2 and summary["decided"] == 1 and summary["precision"] == 1.0
