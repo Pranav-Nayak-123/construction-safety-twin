@@ -134,6 +134,34 @@ def process(job: dict[str, Any], inbox: Inbox, site: Site, runs_repo: str, outpu
             print(f"[{job_id}] could not delete the raw upload: {error}", flush=True)
 
 
+LOCK_FILE = Path(tempfile.gettempdir()) / "ground-truth-worker.lock"
+
+
+def single_instance(path: Path):  # noqa: ANN201 - the open, locked file, or None
+    """An exclusive lock held for the process's life: one worker per computer.
+
+    Two workers claimed the same upload and wrote into the same frame store
+    ("UNIQUE constraint failed: frames.frame_index"). The lock is released by the OS
+    when the process exits, so a crashed worker never blocks the next one.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    handle = path.open("a+")
+    try:
+        handle.seek(0)
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        handle.close()
+        return None
+    return handle
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--site", default=os.environ.get("SAFETY_SITE_URL"))
@@ -145,6 +173,11 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if not args.inbox or not args.runs:
         parser.error("--inbox and --runs (or SAFETY_INBOX_REPO / SAFETY_RUNS_REPO) are required")
+    lock = single_instance(LOCK_FILE)
+    if lock is None:
+        print("Another Ground Truth worker is already running on this computer.", flush=True)
+        print("Close its window first: two workers would process the same upload.", flush=True)
+        return 1
 
     inbox = Inbox(args.inbox, os.environ.get("HF_TOKEN") or None)
     inbox.ensure()
