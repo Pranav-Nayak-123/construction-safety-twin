@@ -260,7 +260,7 @@ body.chat-open .fab { display:none; }
 @media (max-width:1100px) {
   .inbox { grid-template-columns:1fr; }
   .detail, .list { position:static; max-height:none; }
-  .grid.cols-3-2, .grid.cols-2 { grid-template-columns:1fr; }
+  .grid.cols-3-2, .grid.cols-2 { grid-template-columns:minmax(0,1fr); }
 }
 @media (max-width:860px) {
   .shell { grid-template-columns:minmax(0,1fr); }
@@ -273,6 +273,7 @@ body.chat-open .fab { display:none; }
   .nav a { white-space:nowrap; margin:0; }
   .nav a[aria-current="page"]::before { display:none; }
   main { padding:20px 16px 40px; }
+  .card > .card-body { overflow-x:auto; }  /* wide tables scroll inside their card */
   .hero { padding:20px; } .hero h1 { font-size:1.35rem; }
   .detail .d-body { grid-template-columns:1fr; }
   .cov-row { grid-template-columns:40px 1fr; } .cov-row > .stack, .cov-row > .chip-cell { grid-column:1 / -1; }

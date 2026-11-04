@@ -192,3 +192,24 @@ def test_a_failed_job_is_reported_and_its_upload_deleted(
     final = inbox.job(job["job_id"])
     assert final["status"] == "failed" and "limited to 300 s" in final["message"]
     assert job["job_id"] in FakeInbox.discarded
+
+
+def test_only_one_worker_runs_per_computer(tmp_path: Path) -> None:
+    from tools import worker
+
+    lock = tmp_path / "worker.lock"
+    first = worker.single_instance(lock)
+    assert first is not None
+    assert worker.single_instance(lock) is None  # a second worker is refused
+    first.close()
+    again = worker.single_instance(lock)  # released when the first one exits
+    assert again is not None
+    again.close()
+
+
+def test_every_site_page_has_the_light_dark_toggle(client: TestClient) -> None:
+    for path in ("/", "/upload", "/jobs/abcdef123456"):
+        page = client.get(path).text
+        assert "data-theme-toggle" in page, path
+        assert "localStorage.getItem('safety-theme')" in page, path  # the saved choice applies
+        assert ':root[data-theme="dark"]' in page, path  # a pick overrides the system theme

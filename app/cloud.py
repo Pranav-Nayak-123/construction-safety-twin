@@ -637,9 +637,12 @@ PAGE = """<!doctype html>
   --text:#0e1116; --text-2:#465061; --text-3:#7a8394; --accent:#2563eb; --accent-soft:#e8efff;
   --good:#0ca30c; --warning:#fab219; --critical:#d03b3b; --grid:rgba(37,99,235,.07);
   --display:"Space Grotesk", Inter, "Segoe UI", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, Consolas, monospace; }
-@media (prefers-color-scheme: dark) { :root { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
+@media (prefers-color-scheme: dark) { :root:where(:not([data-theme="light"])) { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
   --line:#242a33; --line-2:#2f3642; --text:#eef1f5; --text-2:#b3bbc7; --text-3:#7d8796; --accent:#5b9dff;
   --accent-soft:rgba(91,157,255,.13); --grid:rgba(91,157,255,.06); } }
+:root[data-theme="dark"] { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
+  --line:#242a33; --line-2:#2f3642; --text:#eef1f5; --text-2:#b3bbc7; --text-3:#7d8796; --accent:#5b9dff;
+  --accent-soft:rgba(91,157,255,.13); --grid:rgba(91,157,255,.06); }
 * { box-sizing:border-box; } [hidden] { display:none !important; }
 body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); font:15px/1.6 Inter, "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing:antialiased; background-image:linear-gradient(var(--grid) 1px, transparent 1px),
@@ -649,8 +652,8 @@ a { color:var(--accent); text-decoration:none; }
 .nav .wrap { display:flex; align-items:center; height:62px; gap:20px; }
 .wrap { max-width:760px; margin:0 auto; padding:0 24px; }
 .logo { display:flex; align-items:center; gap:10px; color:var(--text); font-family:var(--display); }
-.logo-mark { display:block; } .wordmark { font-weight:700; letter-spacing:.05em; }
-.nav .back { margin-left:auto; color:var(--text-2); font-size:.9rem; }
+.logo-mark { display:block; } .wordmark { font-weight:700; letter-spacing:.05em; white-space:nowrap; }
+.nav .back { margin-left:auto; margin-right:4px; color:var(--text-2); font-size:.9rem; }
 main.wrap { padding-top:48px; padding-bottom:64px; }
 h1 { font-family:var(--display); font-size:2rem; letter-spacing:-.02em; margin:0 0 8px; }
 .lead { color:var(--text-2); margin:0 0 24px; }
@@ -687,10 +690,12 @@ input[type=password], input[type=text] { width:100%; border:1px solid var(--line
 .pill.on::before { background:var(--good); box-shadow:0 0 0 3px color-mix(in srgb, var(--good) 25%, transparent); }
 .mono { font-family:var(--mono); font-size:.82rem; color:var(--text-3); }
 @media (max-width:600px) { .facts { grid-template-columns:1fr; } h1 { font-size:1.6rem; } }
-</style></head><body>
+.theme-btn { display:inline-grid; place-items:center; width:36px; height:36px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); cursor:pointer; padding:0; }
+.theme-btn:hover { border-color:var(--accent); }
+</style><script>try{var t=localStorage.getItem('safety-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script></head><body>
 <nav class="nav"><div class="wrap"><a class="logo" href="/" aria-label="Ground Truth home">{wordmark}</a>
-<a class="back" href="/">← All runs</a></div></nav>
-<main class="wrap">{body}</main></body></html>"""
+<a class="back" href="/">← All runs</a><button class="theme-btn" type="button" data-theme-toggle aria-label="Switch between light and dark theme" title="Light / dark"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg></button></div></nav>
+<main class="wrap">{body}</main><script>document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.addEventListener('click',function(){var r=document.documentElement;var dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('safety-theme',r.dataset.theme)}catch(e){}})})</script></body></html>"""
 
 UPLOAD_BODY = """<h1>Analyse your own video</h1>
 <p class="lead">Upload fixed-camera construction footage. The full pipeline runs on the team's GPU
@@ -782,7 +787,7 @@ function mark(current, failed) {
 function bar(stage, p) { const b = $('b-' + stage); b.hidden = false; b.firstElementChild.style.width = Math.round(100 * p) + '%'; }
 async function poll() {
   let j;
-  try { const r = await fetch('/api/jobs/{job_id}'); if (r.status === 404) { $('title').textContent = 'No such job'; return; } j = await r.json(); }
+  try { const r = await fetch('/api/jobs/{job_id}'); if (r.status === 404) { $('title').textContent = 'No such job'; document.querySelector('.card').innerHTML = '<p style="margin:0">This link does not match an upload. Check the link, or <a href="/upload">upload a video</a>.</p>'; $('worker').hidden = true; return; } j = await r.json(); }
   catch (e) { setTimeout(poll, 5000); return; }
   const w = j.worker || {};
   $('worker').textContent = w.online ? (w.state === 'paused' ? 'worker paused' : 'worker online') : 'worker offline';
@@ -913,9 +918,12 @@ GALLERY = """<!doctype html>
   --text:#0e1116; --text-2:#465061; --text-3:#7a8394; --accent:#2563eb; --accent-soft:#e8efff; --hazard:#f5b301;
   --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b; --grid:rgba(37,99,235,.07);
   --display:"Space Grotesk", Inter, "Segoe UI", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, Consolas, monospace; }
-@media (prefers-color-scheme: dark) { :root { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
+@media (prefers-color-scheme: dark) { :root:where(:not([data-theme="light"])) { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
   --line:#242a33; --line-2:#2f3642; --text:#eef1f5; --text-2:#b3bbc7; --text-3:#7d8796; --accent:#5b9dff;
   --accent-soft:rgba(91,157,255,.13); --grid:rgba(91,157,255,.06); } }
+:root[data-theme="dark"] { color-scheme:dark; --bg:#0c0e12; --surface:#13161b; --surface-2:#1a1e25;
+  --line:#242a33; --line-2:#2f3642; --text:#eef1f5; --text-2:#b3bbc7; --text-3:#7d8796; --accent:#5b9dff;
+  --accent-soft:rgba(91,157,255,.13); --grid:rgba(91,157,255,.06); }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--bg); color:var(--text); font:15px/1.6 Inter, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
 a { color:var(--accent); text-decoration:none; }
@@ -927,7 +935,8 @@ h1, h2, h3 { font-family:var(--display); letter-spacing:-.02em; margin:0; }
 .nav .wrap { display:flex; align-items:center; gap:22px; height:62px; }
 .logo { display:flex; align-items:center; gap:10px; color:var(--text); font-family:var(--display); font-weight:700; font-size:1.05rem; }
 .logo-mark { display:block; }
-.wordmark { font-size:1rem; font-weight:700; letter-spacing:.05em; }
+.wordmark { font-size:1rem; font-weight:700; letter-spacing:.05em; white-space:nowrap; }
+@media (max-width:480px) { .nav .links a.btn { display:none; } .nav .links { gap:14px; } }
 .nav .links { margin-left:auto; display:flex; gap:20px; align-items:center; font-size:.9rem; }
 .nav .links a { color:var(--text-2); } .nav .links a:hover { color:var(--text); }
 .btn { display:inline-flex; align-items:center; gap:8px; border-radius:10px; padding:10px 16px; font-weight:600; font-size:.92rem;
@@ -1019,11 +1028,13 @@ footer .links { margin-left:auto; display:flex; gap:18px; } footer a { color:var
 }
 @media (max-width:560px) { .steps, .trust { grid-template-columns:1fr; } .wrap { padding:0 16px; } }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important; } .shot { transform:none; } }
-</style></head><body>
+.theme-btn { display:inline-grid; place-items:center; width:36px; height:36px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); cursor:pointer; padding:0; }
+.theme-btn:hover { border-color:var(--accent); }
+</style><script>try{var t=localStorage.getItem('safety-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script></head><body>
 <nav class="nav"><div class="wrap">
   <a class="logo" href="/" aria-label="Ground Truth home">{wordmark}</a>
   <div class="links"><a class="hide-sm" href="#runs">Runs</a><a class="hide-sm" href="#how">How it works</a><a href="/upload">Upload</a>
-    <a class="hide-sm" href="/docs">API</a><a class="btn" href="{github}">GitHub</a></div>
+    <a class="hide-sm" href="/docs">API</a><a class="btn" href="{github}">GitHub</a><button class="theme-btn" type="button" data-theme-toggle aria-label="Switch between light and dark theme" title="Light / dark"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg></button></div>
 </div></nav>
 <header class="hero"><div class="wrap">
   <div>
@@ -1074,7 +1085,7 @@ footer .links { margin-left:auto; display:flex; gap:18px; } footer a { color:var
 </main>
 <footer><div class="wrap"><span><b>Ground Truth</b>: what is actually true on the ground, checked against the footage. CS3235 Team 5. Heuristic triage from video, not legal advice or certified measurement.</span>
 <div class="links"><a href="/docs">API</a><a href="/api/stats">Assistant monitoring</a><a href="/healthz">Status</a><a href="{github}">GitHub</a></div></div></footer>
-</body></html>"""
+<script>document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.addEventListener('click',function(){var r=document.documentElement;var dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('safety-theme',r.dataset.theme)}catch(e){}})})</script></body></html>"""
 
 
 def gallery_page() -> str:
