@@ -1,26 +1,34 @@
-# Construction Safety Twin
+<img src="docs/brand/ground-truth-mark.svg" alt="Ground Truth logo" width="72" align="left">
+
+# Ground Truth
 
 **Live demo: https://safety-twin.onrender.com** · CS3235 Team 5, *AI-Based Construction Safety Inspection and Compliance*
 
-Drop in a fixed-camera construction-site video and get:
+<br clear="left">
+
+Upload a fixed-camera construction-site video on the site, or process one on the workstation, and get:
 - hazard incidents for eight rules, each with an evidence clip and a "why it fired" trace;
 - leading indicators;
 - an interactive 3D digital twin of the site;
 - a 5×5 risk register;
-- a chatbot that answers questions about the run and cites every fact it uses.
+- an assistant that answers questions about the run and cites every fact it uses.
+
+The name is the job: what is actually true on the ground, checked against the footage. The GT logo hides it. The amber T drops onto a ground line, and the dot is a worker on the ground plane.
 
 This is a heuristic triage tool, not a certified safety system and not legal advice. Distances are relative risk bands in worker heights, not metres. The twin does not reconstruct hidden geometry or BIM.
 
-## At a glance (October 2026)
+## At a glance (November 2026)
 
 | Area | State |
 |---|---|
 | Offline pipeline | Runs end to end on three real CCTV clips (SARD 7, 8, 9) at 1.1–2.0× real time on a GTX 1660 Ti |
 | Hazard rules | R1–R8: PPE, restricted zones, machinery, open edges, worker down, under a suspended load, fire or smoke |
 | Hosted demo | Live on free tiers: Render + Hugging Face + Gemini + Supabase. CI/CD deploys after tests pass; $0 a month |
-| Risk chatbot | Gemini 3.6 Flash, grounded in the run's facts. Every number and worker is checked against the facts its sentence cites; on the live site 6/6 test answers passed, median 4.7 s |
+| Video uploads | Upload on the site with an access code. The workstation's GPU worker runs the full pipeline and publishes the report, and the raw upload is deleted. Live and tested end to end |
+| Digital twin | Calibrated from the workers' own heights. A steady camera that cannot be calibrated (short or sparse clips) gets an approximate, clearly labelled layout instead of none |
+| Risk assistant | Gemini 3.6 Flash over precomputed facts (counts, timelines, rankings). Every claim must cite a fact, and every number and worker is checked against it. Legal and off-topic questions are answered without the model. 35/35 on a graded question set, up from 30/35 (`evaluation/chat_eval.py`) |
 | Incident narrator | Qwen2.5-1.5B LoRA, trained and evaluated against base 0-shot and 4-shot. Not promoted: 0.90 pass rate vs 0.93 for 4-shot on the test split. Guarded template text is shown instead |
-| Accuracy | Being measured, three ways: R7 on the SynthSite benchmark (227 labelled clips, against published baselines); incident precision and reviewer agreement (Cohen's kappa) from team review on the live site; PPE blind labels |
+| Accuracy | PPE classifier macro-F1 0.94. R7 on SynthSite (156 of 227 labelled clips): precision 1.00 but recall 0.04, against 0.90 recall for a YOLO-World baseline (`evaluation/results/synthsite_r7.md`). Incident precision and reviewer agreement (Cohen's kappa) come from team review on the live site |
 
 ```text
 video ─► intake ─► pass 1: detect (YOLOE-26l, every 2nd frame) · track (ByteTrack) · PPE · pose
@@ -28,6 +36,7 @@ video ─► intake ─► pass 1: detect (YOLOE-26l, every 2nd frame) · track 
       ─► insights · traces · evidence grades ─► pass 3: render (faces pixelated) · 3D twin · clips
       ─► validated run bundle + report.html ─► LoRA narration behind a guardrail
       ─► publish (privacy gate) ─► cloud app: gallery · reports · risk register · grounded chat
+site upload ─► private inbox ─► GPU worker (this pipeline) ─► publish ─► report on the site
 ```
 
 ## Components
@@ -221,7 +230,16 @@ uv sync --extra serve
 SAFETY_RUNS_DIR=output SAFETY_LLM_PROVIDER=ollama uv run uvicorn app.cloud:app --port 8080   # local
 ```
 
-The architecture, the filled-in Section 11 table, step-by-step deployment and the shutdown plan are in [docs/deploy/cloud.md](docs/deploy/cloud.md).
+**Video uploads.** Anyone with the access code can upload a clip at `/upload` (up to 200 MB and 5 minutes). Render has no GPU, so the site only queues the job in a private Hugging Face inbox. The worker on the GPU workstation picks it up, runs the full pipeline and publishes the run through the same privacy gate. The status page shows live progress and links the report. Start the worker with:
+
+```bash
+SAFETY_WORKER_KEY=... uv run python tools/worker.py --site https://safety-twin.onrender.com \
+    --inbox <user>/safety-twin-inbox --runs <user>/safety-twin-runs
+```
+
+The worker pauses on battery, and jobs wait in the queue while it is offline. The site is redesigned (Ground Truth): a verdict-first overview, a grouped incident inbox, and the assistant as a drawer on every page. Every published report is re-rendered with the current design at startup.
+
+The architecture, the filled-in Section 11 table, step-by-step deployment, upload setup, rollback and the shutdown plan are in [docs/deploy/cloud.md](docs/deploy/cloud.md).
 
 ## Data
 

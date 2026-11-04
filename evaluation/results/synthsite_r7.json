@@ -1,0 +1,270 @@
+{
+  "benchmark": "SynthSite (govtech/SynthSite), worker under suspended load",
+  "split": "all",
+  "detector": "default",
+  "clips_scored": 156,
+  "clips_failed": [],
+  "systems": {
+    "This pipeline (R7)": {
+      "overall": {
+        "clips": 156,
+        "tp": 4,
+        "fp": 0,
+        "tn": 64,
+        "fn": 88,
+        "precision": 1.0,
+        "recall": 0.0435,
+        "specificity": 1.0,
+        "accuracy": 0.4359,
+        "f1": 0.0833,
+        "f2": 0.0538,
+        "f2_ci95": [
+          0.0129,
+          0.1087
+        ]
+      },
+      "tier1": {
+        "clips": 99,
+        "tp": 4,
+        "fp": 0,
+        "tn": 39,
+        "fn": 56,
+        "precision": 1.0,
+        "recall": 0.0667,
+        "specificity": 1.0,
+        "accuracy": 0.4343,
+        "f1": 0.125,
+        "f2": 0.082,
+        "f2_ci95": [
+          0.0198,
+          0.1639
+        ]
+      },
+      "tier2": {
+        "clips": 57,
+        "tp": 0,
+        "fp": 0,
+        "tn": 25,
+        "fn": 32,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "accuracy": 0.4386,
+        "f1": 0.0,
+        "f2": 0.0,
+        "f2_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "dev": {
+        "clips": 44,
+        "tp": 1,
+        "fp": 0,
+        "tn": 20,
+        "fn": 23,
+        "precision": 1.0,
+        "recall": 0.0417,
+        "specificity": 1.0,
+        "accuracy": 0.4773,
+        "f1": 0.08,
+        "f2": 0.0515,
+        "f2_ci95": [
+          0.0,
+          0.1648
+        ]
+      },
+      "test": {
+        "clips": 112,
+        "tp": 3,
+        "fp": 0,
+        "tn": 44,
+        "fn": 65,
+        "precision": 1.0,
+        "recall": 0.0441,
+        "specificity": 1.0,
+        "accuracy": 0.4196,
+        "f1": 0.0845,
+        "f2": 0.0545,
+        "f2_ci95": [
+          0.0,
+          0.1237
+        ]
+      }
+    },
+    "YOLO-World": {
+      "overall": {
+        "clips": 156,
+        "tp": 83,
+        "fp": 41,
+        "tn": 23,
+        "fn": 9,
+        "precision": 0.6694,
+        "recall": 0.9022,
+        "specificity": 0.3594,
+        "accuracy": 0.6795,
+        "f1": 0.7685,
+        "f2": 0.8435,
+        "f2_ci95": [
+          0.7878,
+          0.8932
+        ]
+      },
+      "tier1": {
+        "clips": 99,
+        "tp": 52,
+        "fp": 22,
+        "tn": 17,
+        "fn": 8,
+        "precision": 0.7027,
+        "recall": 0.8667,
+        "specificity": 0.4359,
+        "accuracy": 0.697,
+        "f1": 0.7761,
+        "f2": 0.828,
+        "f2_ci95": [
+          0.7426,
+          0.8987
+        ]
+      },
+      "tier2": {
+        "clips": 57,
+        "tp": 31,
+        "fp": 19,
+        "tn": 6,
+        "fn": 1,
+        "precision": 0.62,
+        "recall": 0.9688,
+        "specificity": 0.24,
+        "accuracy": 0.6491,
+        "f1": 0.7561,
+        "f2": 0.8708,
+        "f2_ci95": [
+          0.7895,
+          0.9309
+        ]
+      },
+      "dev": {
+        "clips": 44,
+        "tp": 21,
+        "fp": 13,
+        "tn": 7,
+        "fn": 3,
+        "precision": 0.6176,
+        "recall": 0.875,
+        "specificity": 0.35,
+        "accuracy": 0.6364,
+        "f1": 0.7241,
+        "f2": 0.8077,
+        "f2_ci95": [
+          0.6696,
+          0.9058
+        ]
+      },
+      "test": {
+        "clips": 112,
+        "tp": 62,
+        "fp": 28,
+        "tn": 16,
+        "fn": 6,
+        "precision": 0.6889,
+        "recall": 0.9118,
+        "specificity": 0.3636,
+        "accuracy": 0.6964,
+        "f1": 0.7848,
+        "f2": 0.8564,
+        "f2_ci95": [
+          0.7872,
+          0.9102
+        ]
+      }
+    },
+    "Grounding DINO": {
+      "overall": {
+        "clips": 156,
+        "tp": 32,
+        "fp": 8,
+        "tn": 56,
+        "fn": 60,
+        "precision": 0.8,
+        "recall": 0.3478,
+        "specificity": 0.875,
+        "accuracy": 0.5641,
+        "f1": 0.4848,
+        "f2": 0.3922,
+        "f2_ci95": [
+          0.2907,
+          0.4949
+        ]
+      },
+      "tier1": {
+        "clips": 99,
+        "tp": 24,
+        "fp": 4,
+        "tn": 35,
+        "fn": 36,
+        "precision": 0.8571,
+        "recall": 0.4,
+        "specificity": 0.8974,
+        "accuracy": 0.596,
+        "f1": 0.5455,
+        "f2": 0.4478,
+        "f2_ci95": [
+          0.3162,
+          0.5754
+        ]
+      },
+      "tier2": {
+        "clips": 57,
+        "tp": 8,
+        "fp": 4,
+        "tn": 21,
+        "fn": 24,
+        "precision": 0.6667,
+        "recall": 0.25,
+        "specificity": 0.84,
+        "accuracy": 0.5088,
+        "f1": 0.3636,
+        "f2": 0.2857,
+        "f2_ci95": [
+          0.1282,
+          0.4516
+        ]
+      },
+      "dev": {
+        "clips": 44,
+        "tp": 7,
+        "fp": 0,
+        "tn": 20,
+        "fn": 17,
+        "precision": 1.0,
+        "recall": 0.2917,
+        "specificity": 1.0,
+        "accuracy": 0.6136,
+        "f1": 0.4516,
+        "f2": 0.3398,
+        "f2_ci95": [
+          0.1402,
+          0.5319
+        ]
+      },
+      "test": {
+        "clips": 112,
+        "tp": 25,
+        "fp": 8,
+        "tn": 36,
+        "fn": 43,
+        "precision": 0.7576,
+        "recall": 0.3676,
+        "specificity": 0.8182,
+        "accuracy": 0.5446,
+        "f1": 0.495,
+        "f2": 0.4098,
+        "f2_ci95": [
+          0.2931,
+          0.5248
+        ]
+      }
+    }
+  }
+}
