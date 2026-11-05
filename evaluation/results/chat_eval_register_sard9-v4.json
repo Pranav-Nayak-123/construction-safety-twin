@@ -236,7 +236,7 @@
       "source": "register",
       "check_failures": [],
       "latency_s": 0.0,
-      "answer": "- R2 Apparent missing hi-vis in movement area: not assessed in this clip — nothing to check in this clip (movement area absent). This is not the same as no risk. [NA-R2]\n- R4 Approximate machinery proximity: not assessed in this clip — nothing to check in this clip (no machinery tracks). This is not the same as no risk. [NA-R4]\n- R5 Possible fall-edge exposure: not assessed in this clip — the evidence was not good enough to decide (target plane incompatible). This is not the same as no risk. [NA-R5]\n- Checked and not observed: R7 [CLEAR-R7], R8 [CLEAR-R8]"
+      "answer": "- R2 Apparent missing hi-vis in movement area: not assessed in this clip — nothing to check in this clip (movement area absent). This is not the same as no risk. [NA-R2]\n- R4 Approximate machinery proximity: not assessed in this clip — nothing to check in this clip (no machinery tracks). This is not the same as no risk. [NA-R4]\n- R5 Possible fall-edge exposure: not assessed in this clip — the evidence was not good enough to decide (target plane incompatible). This is not the same as no risk. [NA-R5]\n- R7 Worker under a suspended load: not assessed in this clip — nothing to check in this clip (no suspended load observed). This is not the same as no risk. [NA-R7]\n- Checked and not observed: R8 [CLEAR-R8]"
     },
     {
       "category": "coverage",
@@ -256,7 +256,7 @@
       "source": "register",
       "check_failures": [],
       "latency_s": 0.0,
-      "answer": "- R7 Worker under a suspended load: checked for the whole clip and not observed (not beneath load). [CLEAR-R7]"
+      "answer": "- R7 Worker under a suspended load: not assessed in this clip — nothing to check in this clip (no suspended load observed). This is not the same as no risk. [NA-R7]"
     },
     {
       "category": "coverage",
