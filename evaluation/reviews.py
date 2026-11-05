@@ -153,10 +153,21 @@ def summarize(
     }
 
 
+def supabase_settings(env: Mapping[str, str] | None = None) -> tuple[str | None, str | None]:
+    """URL and key, trimmed: a value pasted into a dashboard often brings a stray space or
+    line break, which made every request fail with InvalidURL on the hosted demo."""
+    env = env if env is not None else os.environ
+    url = (env.get("SUPABASE_URL") or "").strip().strip('"').strip("'").rstrip("/")
+    key = (env.get("SUPABASE_SERVICE_KEY") or "").strip().strip('"').strip("'")
+    if url and not url.startswith(("https://", "http://")):
+        url = "https://" + url
+    return url or None, key or None
+
+
 def fetch_supabase(run_id: str, env: Mapping[str, str] | None = None) -> list[dict[str, Any]]:
     """All review rows for one run through Supabase's REST API (server-side key)."""
     env = env if env is not None else os.environ
-    url, key = env.get("SUPABASE_URL"), env.get("SUPABASE_SERVICE_KEY")
+    url, key = supabase_settings(env)
     if not url or not key:
         raise RuntimeError("SUPABASE_URL and SUPABASE_SERVICE_KEY are needed")
     query = urllib.parse.urlencode(

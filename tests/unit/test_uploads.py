@@ -258,3 +258,12 @@ def test_review_rows_with_mixed_ids_and_gaps_are_summarised() -> None:
     ]
     summary = summarize(rows, {"a": "R1", "b": "R3"})
     assert summary["reviewers"] == 2 and summary["decided"] == 1 and summary["precision"] == 1.0
+
+
+def test_database_settings_survive_dashboard_paste() -> None:
+    from evaluation.reviews import supabase_settings
+
+    env = {"SUPABASE_URL": " https://abc.supabase.co/\n", "SUPABASE_SERVICE_KEY": "sb_secret_x \n"}
+    assert supabase_settings(env) == ("https://abc.supabase.co", "sb_secret_x")
+    assert supabase_settings({"SUPABASE_URL": "abc.supabase.co"})[0] == "https://abc.supabase.co"
+    assert supabase_settings({}) == (None, None)
