@@ -60,7 +60,7 @@ from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
 
 from app.inbox import JOB_ID, MAX_UPLOAD_BYTES, MAX_VIDEO_SECONDS, VIDEO_SUFFIXES, Inbox
-from evaluation.reviews import allowed_reviewers, fetch_supabase, summarize
+from evaluation.reviews import allowed_reviewers, fetch_supabase, summarize, supabase_settings
 from llm.assistant.chat import RiskAssistant
 from llm.assistant.providers import ProviderError, from_env
 from pipeline.output.run_bundle import RunBundle
@@ -189,7 +189,7 @@ class Limiter:
 
 def supabase_insert(table: str, row: dict[str, Any]) -> None:
     """Fire-and-forget insert through Supabase's REST API; a failure is only logged."""
-    url, key = os.environ.get("SUPABASE_URL"), os.environ.get("SUPABASE_SERVICE_KEY")
+    url, key = supabase_settings()
     if not url or not key:
         return
 
