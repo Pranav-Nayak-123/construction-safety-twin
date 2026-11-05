@@ -45,7 +45,9 @@ def latest_by_reviewer(
 ) -> dict[str, dict[str, Mapping[str, Any]]]:
     """reviewer -> incident_id -> that reviewer's latest row (rows in time order)."""
     out: dict[str, dict[str, Mapping[str, Any]]] = defaultdict(dict)
-    for row in sorted(rows, key=lambda r: (str(r.get("created_at") or ""), r.get("id") or 0)):
+    rows = [r for r in rows if r.get("incident_id") and r.get("verdict")]  # skip partial rows
+    # ids are compared as text: integer and uuid primary keys must not crash the sort
+    for row in sorted(rows, key=lambda r: (str(r.get("created_at") or ""), str(r.get("id") or ""))):
         name = str(row.get("reviewer") or "").strip().lower()
         if not name or (allowed is not None and name not in allowed):
             continue

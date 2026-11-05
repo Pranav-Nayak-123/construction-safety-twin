@@ -436,12 +436,15 @@ def review_summary(run_id: str) -> dict[str, Any]:
         return cached[1]
     try:
         rows = fetch_supabase(run_id)
-    except (OSError, RuntimeError, ValueError) as error:
-        log.warning(json.dumps({"event": "reviews_fetch_failed", "error": str(error)}))
-        raise HTTPException(502, "reviews are unavailable right now") from error
-    summary = summarize(
-        rows, {i.incident_id: i.rule_id.value for i in incidents}, allowed=allowed_reviewers()
-    )
+        if not isinstance(rows, list):  # PostgREST answers an error object, not rows
+            raise ValueError(f"unexpected reply from the database: {str(rows)[:160]}")
+        summary = summarize(
+            rows, {i.incident_id: i.rule_id.value for i in incidents}, allowed=allowed_reviewers()
+        )
+    except Exception as error:  # noqa: BLE001 - never a 500: the page just omits the line
+        kind = type(error).__name__
+        log.warning(json.dumps({"event": "reviews_summary_failed", "error": f"{kind}: {error}"}))
+        raise HTTPException(502, f"reviews are unavailable right now ({kind})") from error
     _review_cache[run_id] = (time.time(), summary)
     return summary
 
