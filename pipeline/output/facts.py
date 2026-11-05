@@ -590,6 +590,9 @@ def register_answer(bundle: RunBundle, facts: list[Fact], question: str) -> tupl
     elif query:
         pass
     elif rules:
+        # "how many incidents, and were any without a helmet?" asks for the total too
+        if COUNTING.search(q) and re.search(r"\bincidents?\b", q):
+            say(by_id["RUN"])
         for rule_id in rules:
             say(by_id.get(f"COUNT-{rule_id.value}"))
             say(
