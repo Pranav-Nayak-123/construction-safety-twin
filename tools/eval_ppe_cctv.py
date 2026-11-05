@@ -45,8 +45,10 @@ def main() -> int:
         head_pred = (head_logits / t["head"]).argmax(1).tolist()
         torso_pred = (torso_logits / t["torso"]).argmax(1).tolist()
         result = {}
-        for name, truth, pred, labels in (("head", heads, head_pred, HEAD_LABELS),
-                                          ("torso", torsos, torso_pred, TORSO_LABELS)):
+        for name, truth, pred, labels in (
+            ("head", heads, head_pred, HEAD_LABELS),
+            ("torso", torsos, torso_pred, TORSO_LABELS),
+        ):
             by_truth: dict[str, Counter] = {}
             for y, p in zip(truth.tolist(), pred, strict=True):
                 if 0 <= y < len(labels):
@@ -54,12 +56,16 @@ def main() -> int:
             result[name] = {k: dict(v) for k, v in by_truth.items()}
         helmet = Counter(result["head"].get("helmet", {}))
         no_vest = Counter(result["torso"].get("no_vest", {}))
-        result["false_no_helmet_rate"] = round(helmet["no_helmet"] / max(sum(helmet.values()), 1), 3)
-        result["helmet_recognised_rate"] = round(helmet["helmet"] / max(sum(helmet.values()), 1), 3)
-        result["false_vest_rate"] = round(no_vest["vest"] / max(sum(no_vest.values()), 1), 3)
-        result["no_vest_recognised_rate"] = round(no_vest["no_vest"] / max(sum(no_vest.values()), 1), 3)
+
+        def rate(counts: Counter, key: str) -> float:
+            return round(counts[key] / max(sum(counts.values()), 1), 3)
+
+        result["false_no_helmet_rate"] = rate(helmet, "no_helmet")
+        result["helmet_recognised_rate"] = rate(helmet, "helmet")
+        result["false_vest_rate"] = rate(no_vest, "vest")
+        result["no_vest_recognised_rate"] = rate(no_vest, "no_vest")
         report[str(path)] = result
-        print(path, json.dumps({k: v for k, v in result.items() if "rate" in k}), result["head"].get("no_helmet"))
+        print(path, json.dumps({k: v for k, v in result.items() if "rate" in k}))
     if args.out:
         args.out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     return 0

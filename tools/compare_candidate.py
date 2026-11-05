@@ -27,14 +27,23 @@ def analyse(video: Path, site: Path | None, config, tag: str) -> list[dict]:  # 
     from shared.identity import display_track_label
 
     scratch = Path(tempfile.mkdtemp(prefix=f"compare-{tag}-"))
-    job = ProcessJob(video, output_root=scratch, run_id=f"compare-{tag}-{video.stem}",
-                     site_config=site, config=config)
+    job = ProcessJob(
+        video,
+        output_root=scratch,
+        run_id=f"compare-{tag}-{video.stem}",
+        site_config=site,
+        config=config,
+    )
     shutil.rmtree(job.work_dir, ignore_errors=True)
     try:
         found = job.analyse()
         out = [
-            {"rule": i.rule_id.value, "worker": display_track_label(i.canonical_track_id or ""),
-             "start": round(i.first_seen_s, 1), "evidence": i.evidence_quality}
+            {
+                "rule": i.rule_id.value,
+                "worker": display_track_label(i.canonical_track_id or ""),
+                "start": round(i.first_seen_s, 1),
+                "evidence": i.evidence_quality,
+            }
             for i in found.pass2.rules.incidents
         ]
         found.store.close()
@@ -59,19 +68,31 @@ def main() -> int:
     base = load_config()
     candidate = base
     if args.detector:
-        candidate = candidate.model_copy(update={"stage1": candidate.stage1.model_copy(
-            update={"pretrained_fallback": str(args.detector)})})
+        candidate = candidate.model_copy(
+            update={
+                "stage1": candidate.stage1.model_copy(
+                    update={"pretrained_fallback": str(args.detector)}
+                )
+            }
+        )
     if args.ppe:
-        candidate = candidate.model_copy(update={"ppe": candidate.ppe.model_copy(
-            update={"model_path": str(args.ppe)})})
+        candidate = candidate.model_copy(
+            update={"ppe": candidate.ppe.model_copy(update={"model_path": str(args.ppe)})}
+        )
     if args.r7_min_confidence is not None:
-        candidate = candidate.model_copy(update={"rules": candidate.rules.model_copy(
-            update={"r7_min_confidence": args.r7_min_confidence})})
+        candidate = candidate.model_copy(
+            update={
+                "rules": candidate.rules.model_copy(
+                    update={"r7_min_confidence": args.r7_min_confidence}
+                )
+            }
+        )
     results = {"candidate": analyse(args.video, args.site, candidate, "candidate")}
     if not args.skip_current:
         # the current setup: original detector, PPE and R7 threshold, people-only tracking
-        current = base.model_copy(update={"tracker": base.tracker.model_copy(
-            update={"hazard_new_track_threshold": None})})
+        current = base.model_copy(
+            update={"tracker": base.tracker.model_copy(update={"hazard_new_track_threshold": None})}
+        )
         results["current"] = analyse(args.video, args.site, current, "current")
     for name, incidents in results.items():
         print(name, dict(Counter(i["rule"] for i in incidents)))

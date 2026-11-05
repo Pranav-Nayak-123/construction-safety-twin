@@ -1,0 +1,154 @@
+{
+ "candidate": [
+  {
+   "rule": "R3",
+   "worker": "3",
+   "start": 0.0,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "5",
+   "start": 0.0,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R1",
+   "worker": "7",
+   "start": 0.4,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "21",
+   "start": 1.8,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "6",
+   "start": 12.4,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "48",
+   "start": 18.4,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "58",
+   "start": 23.5,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R1",
+   "worker": "52",
+   "start": 26.8,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "27",
+   "start": 27.6,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "46",
+   "start": 31.8,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "89",
+   "start": 42.4,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "91",
+   "start": 44.0,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "98",
+   "start": 49.2,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R3",
+   "worker": "1",
+   "start": 54.3,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "114",
+   "start": 60.9,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "21",
+   "start": 105.7,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "175",
+   "start": 119.6,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "177",
+   "start": 126.7,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "192",
+   "start": 132.5,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "196",
+   "start": 134.5,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "188",
+   "start": 137.1,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "199",
+   "start": 139.2,
+   "evidence": "strong"
+  },
+  {
+   "rule": "R3",
+   "worker": "209",
+   "start": 141.7,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "205",
+   "start": 153.5,
+   "evidence": "moderate"
+  },
+  {
+   "rule": "R3",
+   "worker": "218",
+   "start": 164.4,
+   "evidence": "moderate"
+  }
+ ]
+}

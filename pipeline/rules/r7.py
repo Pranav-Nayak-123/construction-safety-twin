@@ -16,6 +16,8 @@ these two checks reject it without touching real loads.
 
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
+
 from pipeline.rules.base import ResultFactory, most_relevant
 from shared.enums import RuleId, RuleStatus
 from shared.schemas.frame import FrameContext, HazardObject
@@ -27,12 +29,39 @@ SIDE_MARGIN = 0.25  # of the load's width
 MAX_DROP_HEIGHTS = 8.0
 TOP_EDGE_PX = 3.0
 MAX_LOAD_ASPECT = 2.2  # height / width; masts and columns are taller
+FIXED_AFTER_S = 15.0
+FIXED_SHIFT = 0.2  # of the load's width
 
 
 def plausible_load(load: HazardObject) -> bool:
     b = load.box_reference
     width, height = b.x2 - b.x1, b.y2 - b.y1
     return b.y1 > TOP_EDGE_PX and width > 0 and height / width <= MAX_LOAD_ASPECT
+
+
+def fixed_structures(tracks: Mapping[str, Sequence]) -> set[str]:
+    """Load tracks that never move: structure the detector mistook for a load.
+
+    A suspended load is being lifted, so it moves. On SARD 7 a concrete pump's boom was
+    tracked as a "suspended load" in the same place for the whole clip and put the workers
+    below it on R7. A track seen for at least `FIXED_AFTER_S` whose box centre stays within
+    `FIXED_SHIFT` of its width is dropped; short clips (SynthSite is 5-10 s) are untouched.
+    """
+    fixed = set()
+    for track_id, observations in tracks.items():
+        if len(observations) < 2:
+            continue
+        span = observations[-1].video_time_s - observations[0].video_time_s
+        if span < FIXED_AFTER_S:
+            continue
+        boxes = [o.box_oriented or o.box_reference for o in observations]
+        cx = [(b.x1 + b.x2) / 2 for b in boxes]
+        cy = [(b.y1 + b.y2) / 2 for b in boxes]
+        width = sorted(b.x2 - b.x1 for b in boxes)[len(boxes) // 2]
+        shift = max(max(cx) - min(cx), max(cy) - min(cy))
+        if shift <= FIXED_SHIFT * max(width, 1.0):
+            fixed.add(track_id)
+    return fixed
 
 
 def beneath(worker_box, load: HazardObject) -> bool:

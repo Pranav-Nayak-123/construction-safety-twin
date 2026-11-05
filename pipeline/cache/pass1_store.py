@@ -150,6 +150,15 @@ class Pass1Store:
                 pending = next(rows, None)
             yield frame, observations
 
+    def track_ids(self, object_class: str) -> list[str]:
+        return [
+            track
+            for (track,) in self._connection.execute(
+                "SELECT DISTINCT canonical_track_id FROM tracks WHERE class_name = ?",
+                (object_class,),
+            )
+        ]
+
     def observations_for(self, canonical_track_id: str) -> list[Pass1TrackObservation]:
         return [
             Pass1TrackObservation.model_validate_json(record_json)

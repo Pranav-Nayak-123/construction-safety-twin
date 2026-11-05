@@ -65,9 +65,18 @@ def main() -> int:
             crop = image[max(0, y1 - pad) : y2, max(0, x1 - pad) : x2 + pad]
             crop_id = f"{clip}-{n:02d}"
             cv2.imwrite(str(crops_dir / f"{crop_id}.jpg"), crop)
-            rows.append({"crop_id": crop_id, "image_path": f"crops/{crop_id}.jpg", "split": "test",
-                         "clip": clip, "track": track, "person_height_px": y2 - y1,
-                         "head_state": None, "torso_state": None})
+            rows.append(
+                {
+                    "crop_id": crop_id,
+                    "image_path": f"crops/{crop_id}.jpg",
+                    "split": "test",
+                    "clip": clip,
+                    "track": track,
+                    "person_height_px": y2 - y1,
+                    "head_state": None,
+                    "torso_state": None,
+                }
+            )
     (args.out / "crops.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows), "utf-8")
     # numbered contact sheets: each tile 200 px tall
     for start in range(0, len(rows), args.sheet):

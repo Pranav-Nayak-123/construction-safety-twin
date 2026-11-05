@@ -62,7 +62,10 @@ class FrameContextBuilder:
         seed: int = 42017,
         hazard_classes: Sequence[str] = (),
         posture_available: bool = False,
+        ignored_hazards: frozenset[str] = frozenset(),
     ) -> None:
+        # hazard tracks judged not to be hazards over their whole life (e.g. R7 fixed structures)
+        self.ignored_hazards = frozenset(ignored_hazards)
         self.run_id = run_id
         self.scene = scene
         self.geometry_supported = geometry_supported
@@ -96,6 +99,7 @@ class FrameContextBuilder:
             )
             for o in observations
             if o.object_class in self.hazard_classes
+            and o.canonical_track_id not in self.ignored_hazards
         )
         proposals = self.scene.proposals_for(frame.shot_id)
         has_scene = frame.shot_id in self.scene.shot_proposals

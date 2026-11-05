@@ -1,0 +1,272 @@
+{
+  "artifacts\\models\\ppe\\best.pt": {
+    "original": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.98,
+        "helmet_recall": 0.9735,
+        "no_helmet_precision": 0.9,
+        "no_helmet_recall": 0.9231,
+        "macro_f1": 0.9441,
+        "abstain_rate": 0.0,
+        "ece": 0.0202
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.961,
+        "vest_recall": 0.9933,
+        "no_vest_precision": 0.9756,
+        "no_vest_recall": 0.8163,
+        "macro_f1": 0.9329,
+        "abstain_rate": 0.0152,
+        "ece": 0.0375
+      }
+    },
+    "cctv_96px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9487,
+        "helmet_recall": 0.9801,
+        "no_helmet_precision": 0.9062,
+        "no_helmet_recall": 0.7436,
+        "macro_f1": 0.8905,
+        "abstain_rate": 0.0105,
+        "ece": 0.0285
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9416,
+        "vest_recall": 0.9732,
+        "no_vest_precision": 0.9024,
+        "no_vest_recall": 0.7551,
+        "macro_f1": 0.8897,
+        "abstain_rate": 0.0152,
+        "ece": 0.0264
+      }
+    },
+    "cctv_64px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9548,
+        "helmet_recall": 0.9801,
+        "no_helmet_precision": 0.9062,
+        "no_helmet_recall": 0.7436,
+        "macro_f1": 0.8921,
+        "abstain_rate": 0.0158,
+        "ece": 0.0313
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9295,
+        "vest_recall": 0.9732,
+        "no_vest_precision": 0.8974,
+        "no_vest_recall": 0.7143,
+        "macro_f1": 0.8731,
+        "abstain_rate": 0.0152,
+        "ece": 0.0344
+      }
+    },
+    "cctv_48px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9304,
+        "helmet_recall": 0.9735,
+        "no_helmet_precision": 0.9259,
+        "no_helmet_recall": 0.641,
+        "macro_f1": 0.8545,
+        "abstain_rate": 0.0263,
+        "ece": 0.0409
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9536,
+        "vest_recall": 0.9664,
+        "no_vest_precision": 0.8864,
+        "no_vest_recall": 0.7959,
+        "macro_f1": 0.8994,
+        "abstain_rate": 0.0152,
+        "ece": 0.0248
+      }
+    }
+  },
+  "artifacts\\checkpoints\\ppe\\effb0-v3\\promoted.pt": {
+    "original": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9865,
+        "helmet_recall": 0.9669,
+        "no_helmet_precision": 0.8947,
+        "no_helmet_recall": 0.8718,
+        "macro_f1": 0.9299,
+        "abstain_rate": 0.0211,
+        "ece": 0.0111
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9932,
+        "vest_recall": 0.9732,
+        "no_vest_precision": 0.9184,
+        "no_vest_recall": 0.9184,
+        "macro_f1": 0.9507,
+        "abstain_rate": 0.0152,
+        "ece": 0.021
+      }
+    },
+    "cctv_96px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9728,
+        "helmet_recall": 0.947,
+        "no_helmet_precision": 0.8205,
+        "no_helmet_recall": 0.8205,
+        "macro_f1": 0.8901,
+        "abstain_rate": 0.0211,
+        "ece": 0.0429
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9863,
+        "vest_recall": 0.9664,
+        "no_vest_precision": 0.898,
+        "no_vest_recall": 0.898,
+        "macro_f1": 0.9371,
+        "abstain_rate": 0.0152,
+        "ece": 0.0235
+      }
+    },
+    "cctv_64px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9658,
+        "helmet_recall": 0.9338,
+        "no_helmet_precision": 0.7895,
+        "no_helmet_recall": 0.7692,
+        "macro_f1": 0.8644,
+        "abstain_rate": 0.0316,
+        "ece": 0.0428
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9728,
+        "vest_recall": 0.9597,
+        "no_vest_precision": 0.875,
+        "no_vest_recall": 0.8571,
+        "macro_f1": 0.9161,
+        "abstain_rate": 0.0152,
+        "ece": 0.0311
+      }
+    },
+    "cctv_48px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9521,
+        "helmet_recall": 0.9205,
+        "no_helmet_precision": 0.7297,
+        "no_helmet_recall": 0.6923,
+        "macro_f1": 0.8233,
+        "abstain_rate": 0.0368,
+        "ece": 0.0667
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.973,
+        "vest_recall": 0.9664,
+        "no_vest_precision": 0.8936,
+        "no_vest_recall": 0.8571,
+        "macro_f1": 0.9223,
+        "abstain_rate": 0.0152,
+        "ece": 0.034
+      }
+    }
+  },
+  "artifacts\\checkpoints\\ppe\\effb0-v3b\\promoted.pt": {
+    "original": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9866,
+        "helmet_recall": 0.9735,
+        "no_helmet_precision": 0.9,
+        "no_helmet_recall": 0.9231,
+        "macro_f1": 0.9457,
+        "abstain_rate": 0.0053,
+        "ece": 0.0061
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9865,
+        "vest_recall": 0.9799,
+        "no_vest_precision": 0.9362,
+        "no_vest_recall": 0.898,
+        "macro_f1": 0.9499,
+        "abstain_rate": 0.0152,
+        "ece": 0.0219
+      }
+    },
+    "cctv_96px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9863,
+        "helmet_recall": 0.9536,
+        "no_helmet_precision": 0.8372,
+        "no_helmet_recall": 0.9231,
+        "macro_f1": 0.9239,
+        "abstain_rate": 0.0053,
+        "ece": 0.0357
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9862,
+        "vest_recall": 0.9597,
+        "no_vest_precision": 0.88,
+        "no_vest_recall": 0.898,
+        "macro_f1": 0.9308,
+        "abstain_rate": 0.0152,
+        "ece": 0.0198
+      }
+    },
+    "cctv_64px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.979,
+        "helmet_recall": 0.9272,
+        "no_helmet_precision": 0.7674,
+        "no_helmet_recall": 0.8462,
+        "macro_f1": 0.8786,
+        "abstain_rate": 0.0211,
+        "ece": 0.0422
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9722,
+        "vest_recall": 0.9396,
+        "no_vest_precision": 0.8235,
+        "no_vest_recall": 0.8571,
+        "macro_f1": 0.8978,
+        "abstain_rate": 0.0152,
+        "ece": 0.0381
+      }
+    },
+    "cctv_48px": {
+      "head": {
+        "n": 190,
+        "helmet_precision": 0.9448,
+        "helmet_recall": 0.9073,
+        "no_helmet_precision": 0.7105,
+        "no_helmet_recall": 0.6923,
+        "macro_f1": 0.8135,
+        "abstain_rate": 0.0368,
+        "ece": 0.0667
+      },
+      "torso": {
+        "n": 198,
+        "vest_precision": 0.9792,
+        "vest_recall": 0.9463,
+        "no_vest_precision": 0.84,
+        "no_vest_recall": 0.8571,
+        "macro_f1": 0.9055,
+        "abstain_rate": 0.0202,
+        "ece": 0.0238
+      }
+    }
+  }
+}
