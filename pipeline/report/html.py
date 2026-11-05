@@ -696,8 +696,11 @@ def render_report(
             ),
             (
                 "Exposure",
-                "—" if exposure is None else f"{exposure / 60:.1f} min",
-                "worker-minutes in a hazard condition",
+                *(
+                    ("—", "no indicators recorded")
+                    if exposure is None
+                    else v3.exposure_tile(exposure)
+                ),
             ),
             (
                 "Peak workers in view",
