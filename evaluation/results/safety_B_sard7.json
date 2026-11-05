@@ -1,0 +1,28 @@
+{
+ "candidate": [
+  {
+   "rule": "R7",
+   "worker": "40",
+   "start": 60.8,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "75",
+   "start": 96.4,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "83",
+   "start": 114.0,
+   "evidence": "weak"
+  },
+  {
+   "rule": "R7",
+   "worker": "85",
+   "start": 114.0,
+   "evidence": "weak"
+  }
+ ]
+}

@@ -16,6 +16,8 @@ these two checks reject it without touching real loads.
 
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
+
 from pipeline.rules.base import ResultFactory, most_relevant
 from shared.enums import RuleId, RuleStatus
 from shared.schemas.frame import FrameContext, HazardObject
@@ -27,12 +29,68 @@ SIDE_MARGIN = 0.25  # of the load's width
 MAX_DROP_HEIGHTS = 8.0
 TOP_EDGE_PX = 3.0
 MAX_LOAD_ASPECT = 2.2  # height / width; masts and columns are taller
+FIXED_AFTER_S = 15.0
+FIXED_SHIFT = 0.2  # of the load's width
+PLACE_OVERLAP = 0.5  # median boxes this alike are the same place
 
 
 def plausible_load(load: HazardObject) -> bool:
     b = load.box_reference
     width, height = b.x2 - b.x1, b.y2 - b.y1
     return b.y1 > TOP_EDGE_PX and width > 0 and height / width <= MAX_LOAD_ASPECT
+
+
+def fixed_structures(tracks: Mapping[str, Sequence]) -> set[str]:
+    """Load tracks that never move: structure the detector mistook for a load.
+
+    A suspended load is being lifted, so it moves. On SARD 7 a concrete pump's boom was
+    tracked as a "suspended load" in the same place for the whole clip, and on SARD 8 a
+    building ledge was, split into several short tracks. Tracks are therefore pooled by
+    place (their median boxes overlap): a place occupied for at least `FIXED_AFTER_S` whose
+    box centre stays within `FIXED_SHIFT` of its width is structure, and every track there
+    is dropped. Short clips (SynthSite is 5-10 s) are untouched.
+    """
+
+    def box(o):  # noqa: ANN001, ANN202
+        return o.box_oriented or o.box_reference
+
+    def median_box(observations: Sequence) -> tuple[float, float, float, float]:
+        boxes = [box(o) for o in observations]
+        mid = len(boxes) // 2
+        return tuple(sorted(getattr(b, k) for b in boxes)[mid] for k in ("x1", "y1", "x2", "y2"))
+
+    def overlap(a: tuple, b: tuple) -> float:
+        w = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+        h = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+        union = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - w * h
+        return w * h / union if union > 0 else 0.0
+
+    places: list[tuple[tuple, list[str]]] = []  # (representative box, track ids)
+    for track_id, observations in tracks.items():
+        if not observations:
+            continue
+        here = median_box(observations)
+        for representative, members in places:
+            if overlap(representative, here) >= PLACE_OVERLAP:
+                members.append(track_id)
+                break
+        else:
+            places.append((here, [track_id]))
+
+    fixed: set[str] = set()
+    for _, members in places:
+        observations = sorted((o for t in members for o in tracks[t]), key=lambda o: o.video_time_s)
+        if len(observations) < 2:
+            continue
+        if observations[-1].video_time_s - observations[0].video_time_s < FIXED_AFTER_S:
+            continue
+        boxes = [box(o) for o in observations]
+        cx = [(b.x1 + b.x2) / 2 for b in boxes]
+        cy = [(b.y1 + b.y2) / 2 for b in boxes]
+        width = sorted(b.x2 - b.x1 for b in boxes)[len(boxes) // 2]
+        if max(max(cx) - min(cx), max(cy) - min(cy)) <= FIXED_SHIFT * max(width, 1.0):
+            fixed.update(members)
+    return fixed
 
 
 def beneath(worker_box, load: HazardObject) -> bool:

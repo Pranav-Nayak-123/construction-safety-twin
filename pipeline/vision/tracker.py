@@ -19,6 +19,9 @@ from ultralytics.trackers.byte_tracker import BYTETracker
 from pipeline.vision.detector import Detection
 from shared.config import TrackerConfig
 
+# Hazard track IDs live in their own range so they never collide with people or machines.
+HAZARD_ID_OFFSET = 9_000
+
 
 @dataclass(frozen=True)
 class TrackedObject:
@@ -56,13 +59,23 @@ class ByteTrackAdapter:
         self.fps = fps
         self.class_names = list(class_names)
         self._class_index = {name: index for index, name in enumerate(self.class_names)}
+        self.hazards = set(config.hazard_classes) & set(self.class_names)
         self._tracker = self._new_tracker()
+        self._hazard_tracker = self._new_tracker(hazard=True) if self._hazard_tracking() else None
 
-    def _new_tracker(self) -> BYTETracker:
+    def _hazard_tracking(self) -> bool:
+        return bool(self.hazards) and self.config.hazard_new_track_threshold is not None
+
+    def _new_tracker(self, *, hazard: bool = False) -> BYTETracker:
+        high = self.config.track_high_threshold
+        new = self.config.new_track_threshold
+        if hazard:
+            high = self.config.hazard_track_high_threshold or high
+            new = self.config.hazard_new_track_threshold or new
         args = SimpleNamespace(
-            track_high_thresh=self.config.track_high_threshold,
+            track_high_thresh=high,
             track_low_thresh=self.config.track_low_threshold,
-            new_track_thresh=self.config.new_track_threshold,
+            new_track_thresh=new,
             match_thresh=self.config.match_threshold,
             track_buffer=round(self.config.buffer_seconds * self.fps),  # in processed frames
             fuse_score=True,
@@ -72,8 +85,23 @@ class ByteTrackAdapter:
     def reset(self) -> None:
         """Forget all tracks (shot boundary): IDs are never continued across shots."""
         self._tracker = self._new_tracker()
+        if self._hazard_tracker is not None:
+            self._hazard_tracker = self._new_tracker(hazard=True)
 
     def update(self, detections: Sequence[Detection]) -> list[TrackedObject]:
+        if self._hazard_tracker is None:
+            return self._update(self._tracker, detections)
+        hazards = [d for d in detections if d.class_name in self.hazards]
+        others = [d for d in detections if d.class_name not in self.hazards]
+        tracked = self._update(self._tracker, others)
+        tracked += [
+            TrackedObject(track_id=HAZARD_ID_OFFSET + t.track_id, detection=t.detection)
+            for t in self._update(self._hazard_tracker, hazards)
+        ]
+        tracked.sort(key=lambda item: item.track_id)
+        return tracked
+
+    def _update(self, tracker: BYTETracker, detections: Sequence[Detection]) -> list[TrackedObject]:
         if detections:
             xyxy = np.array([[d.x1, d.y1, d.x2, d.y2] for d in detections], np.float32)
             conf = np.array([d.confidence for d in detections], np.float32)
@@ -82,7 +110,7 @@ class ByteTrackAdapter:
             xyxy = np.zeros((0, 4), np.float32)
             conf = np.zeros((0,), np.float32)
             cls = np.zeros((0,), np.float32)
-        tracks = self._tracker.update(_Detections(xyxy, conf, cls))
+        tracks = tracker.update(_Detections(xyxy, conf, cls))
         if len(tracks) == 0 or len(detections) == 0:
             return []
 

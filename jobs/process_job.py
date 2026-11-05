@@ -56,6 +56,7 @@ from pipeline.output.twin_data import FALLBACK_FAR_WH, TwinRecorder
 from pipeline.report.html import write_report
 from pipeline.rules.catalogue import load_catalogue
 from pipeline.rules.engine import RuleEngine
+from pipeline.rules.r7 import fixed_structures
 from pipeline.scene.site_config import (
     load_reference_image,
     load_site_config,
@@ -648,6 +649,7 @@ class ProcessJob:
                 c for c in self.config.stage1.hazard_classes if c in self.detector_classes
             ],
             posture_available=self.posture_available,
+            ignored_hazards=frozenset(self._fixed_loads(store)),
         )
         engine = RuleEngine(run_id=self.run_id, config=self.config.rules)
         return run_pass2(
@@ -657,6 +659,14 @@ class ProcessJob:
             TrackSummaryBuilder(self.run_id),
             TwinRecorder(fps=self.config.intake.target_fps, fallback=self._fallback_ground(gate)),
         )
+
+    def _fixed_loads(self, store) -> set[str]:  # noqa: ANN001
+        """Suspended-load tracks that never move: structure, not a hanging load (R7)."""
+        tracks = {t: store.observations_for(t) for t in store.track_ids("suspended_load")}
+        fixed = fixed_structures(tracks)
+        if fixed:
+            self.report(f"R7: {len(fixed)} fixed structure(s) ignored as loads")
+        return fixed
 
     def _fallback_camera(self) -> Camera:
         size = (self.config.intake.target_width, self.config.intake.target_height)

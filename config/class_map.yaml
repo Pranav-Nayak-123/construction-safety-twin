@@ -44,6 +44,10 @@ maps:
       steel beam lifted by a crane: suspended_load
       bundle of rebar lifted by a crane: suspended_load
       concrete bucket hanging from a crane: suspended_load
+      # From tools/probe_load_prompts.py on the dev split (evaluation/r7_prompt_probe.json).
+      steel beam: suspended_load
+      crane lifting a load: suspended_load
+      hoisted load: suspended_load
       fire: fire
       smoke: smoke
   # Frozen after profiling the Roboflow Construction Site Safety v27 export (Phase 3).

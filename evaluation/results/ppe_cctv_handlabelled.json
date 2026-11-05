@@ -1,0 +1,65 @@
+{
+  "artifacts\\models\\ppe\\best.pt": {
+    "head": {
+      "helmet": {
+        "helmet": 99,
+        "no_helmet": 1
+      },
+      "no_helmet": {
+        "helmet": 1
+      }
+    },
+    "torso": {
+      "no_vest": {
+        "vest": 95,
+        "no_vest": 12
+      }
+    },
+    "false_no_helmet_rate": 0.01,
+    "helmet_recognised_rate": 0.99,
+    "false_vest_rate": 0.888,
+    "no_vest_recognised_rate": 0.112
+  },
+  "artifacts\\checkpoints\\ppe\\effb0-v3\\promoted.pt": {
+    "head": {
+      "helmet": {
+        "helmet": 100
+      },
+      "no_helmet": {
+        "helmet": 1
+      }
+    },
+    "torso": {
+      "no_vest": {
+        "vest": 65,
+        "no_vest": 42
+      }
+    },
+    "false_no_helmet_rate": 0.0,
+    "helmet_recognised_rate": 1.0,
+    "false_vest_rate": 0.607,
+    "no_vest_recognised_rate": 0.393
+  },
+  "artifacts\\checkpoints\\ppe\\effb0-v3b\\promoted.pt": {
+    "head": {
+      "helmet": {
+        "helmet": 98,
+        "unknown": 1,
+        "no_helmet": 1
+      },
+      "no_helmet": {
+        "helmet": 1
+      }
+    },
+    "torso": {
+      "no_vest": {
+        "vest": 56,
+        "no_vest": 51
+      }
+    },
+    "false_no_helmet_rate": 0.01,
+    "helmet_recognised_rate": 0.98,
+    "false_vest_rate": 0.523,
+    "no_vest_recognised_rate": 0.477
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "steel beam": "suspended_load",
+  "crane lifting a load": "suspended_load",
+  "hoisted load": "suspended_load"
+}

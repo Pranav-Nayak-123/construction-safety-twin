@@ -101,20 +101,22 @@ def _summary(bundle: RunBundle) -> Fact:
     m = bundle.manifest
     risk = bundle.risk
     top = ", ".join(f"{r.rule_id.value} {r.band} ({r.rating}/25)" for r in risk.rows[:3]) or "none"
-    exposure = (
-        f" Workers spent {sum(e.exposure_s for e in bundle.insights.exposure) / 60:.1f} "
-        "worker-minutes in a hazard condition."
-        if bundle.insights
-        else ""
-    )
+    total = sum(e.exposure_s for e in bundle.insights.exposure) if bundle.insights else 0.0
+    spent = f"{total / 60:.1f} worker-minutes" if total >= 60 else f"{total:.1f} worker-seconds"
+    exposure = f" Workers spent {spent} in a hazard condition." if bundle.insights else ""
     return Fact(
         id="RUN",
         kind="summary",
         text=(
             f"Run {m.run_id}: {bundle.duration_s:.0f} s of fixed-camera video, "
-            f"{bundle.workers_seen} workers seen for at least 3 s, "
-            f"{len(bundle.incidents)} confirmed incidents across "
-            f"{len({i.rule_id for i in bundle.incidents})} rules.{exposure} "
+            f"{_plural(bundle.workers_seen, 'worker')} seen for at least 3 s, "
+            + (
+                f"{_plural(len(bundle.incidents), 'confirmed incident')} across "
+                f"{_plural(len({i.rule_id for i in bundle.incidents}), 'rule')}."
+                if bundle.incidents
+                else "0 confirmed incidents."
+            )
+            + f"{exposure} "
             f"Highest risks: {top}."
         ),
         keywords="overview summary site run clip total how many biggest top risk",
@@ -126,6 +128,7 @@ def _risk(row: RiskRow, short: dict[str, str]) -> Fact:
     where = f" Where: {', '.join(row.areas)}." if row.areas else ""
     who = f" Most exposed workers: {', '.join(row.top_workers)}." if row.top_workers else ""
     controls = " ".join(f"{level}: {text}." for level, text in row.controls)
+    exposed = _plural(row.workers_exposed, "worker")
     return Fact(
         id=f"RISK-{row.rule_id.value}",
         kind="risk",
@@ -135,14 +138,14 @@ def _risk(row: RiskRow, short: dict[str, str]) -> Fact:
             f"{row.rule_id.value} {row.title} — hazard: {row.hazard}. "
             f"Risk {row.band}, rating {row.rating}/25 = likelihood {row.likelihood_score} "
             f"({row.likelihood}) × severity {row.severity_score} ({row.severity}). {row.why} "
-            f"Exposure {row.exposure_s:.1f} worker-seconds, {row.workers_exposed} workers."
+            f"Exposure {row.exposure_s:.1f} worker-seconds, {exposed}."
             f"{where}{who} Incidents: {cited or 'none'}. "
             f"Recommended controls (hierarchy of controls, general good practice): {controls}"
         ),
         keywords=RULE_WORDS[row.rule_id] + " risk rating likelihood severity control fix",
         brief=(
             f"{row.rule_id.value} {row.title}: {row.band} risk ({row.rating}/25). {row.why} "
-            f"{row.workers_exposed} workers exposed for {row.exposure_s:.1f} worker-seconds."
+            f"{exposed} exposed for {row.exposure_s:.1f} worker-seconds."
             f"{where}{'' if row.incidents else ' No confirmed incident.'}"
         ),
     )

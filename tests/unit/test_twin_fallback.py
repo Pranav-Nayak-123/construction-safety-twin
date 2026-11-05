@@ -32,3 +32,33 @@ def test_fallback_places_uncalibrated_workers_but_never_overrides_calibration() 
     assert calibrated == (1.5, 2.5)
     assert twin._position(_worker(960.0, 0.0)) is None  # near the horizon: too far to trust
     assert TwinRecorder(fps=25.0)._position(_worker(960.0, 1000.0)) is None  # no fallback
+
+
+def test_r7_ignores_load_tracks_that_never_move() -> None:
+    from pipeline.rules.r7 import fixed_structures
+
+    def obs(t: float, x: float):  # noqa: ANN202
+        box = SimpleNamespace(x1=x, y1=100.0, x2=x + 80.0, y2=200.0)
+        return SimpleNamespace(video_time_s=t, box_oriented=None, box_reference=box)
+
+    boom = [obs(t, 1300.0 + (t % 2)) for t in range(0, 31)]  # 30 s, jitters by 1 px
+    hoisted = [obs(t, 400.0 + 20.0 * t) for t in range(0, 31)]  # swings across the frame
+    short = [obs(t, 900.0) for t in range(0, 9)]  # still, but only 8 s (a SynthSite clip)
+    assert fixed_structures({"boom": boom, "hoisted": hoisted, "short": short}) == {"boom"}
+
+
+def test_r7_pools_fragmented_tracks_of_one_fixed_structure() -> None:
+    from pipeline.rules.r7 import fixed_structures
+
+    def obs(t: float, x: float, y: float = 100.0):  # noqa: ANN202
+        box = SimpleNamespace(x1=x, y1=y, x2=x + 500.0, y2=y + 30.0)
+        return SimpleNamespace(video_time_s=t, box_oriented=None, box_reference=box)
+
+    # one building ledge, tracked as three short pieces across 40 s
+    pieces = {
+        "a": [obs(t, 100.0) for t in range(0, 5)],
+        "b": [obs(t, 101.0) for t in range(18, 22)],
+        "c": [obs(t, 99.0) for t in range(36, 41)],
+        "elsewhere": [obs(t, 900.0, 600.0) for t in range(0, 4)],
+    }
+    assert fixed_structures(pieces) == {"a", "b", "c"}

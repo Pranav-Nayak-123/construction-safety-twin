@@ -15,7 +15,8 @@ stage1:
   # Used until a fine-tuned checkpoint is promoted to model_path: open-vocabulary YOLOE-26l
   # prompted with construction classes (tools/build_open_vocab.py), which detects machinery
   # that COCO-trained models cannot.
-  pretrained_fallback: artifacts/models/pretrained/yoloe-26l-construction.pt
+  # + "steel beam" for R7 (tools/probe_load_prompts.py); the v3 build is kept for rollback
+  pretrained_fallback: artifacts/models/pretrained/yoloe-26l-construction-r7v5.pt
   class_map: yoloe_construction
   machinery_classes: [machinery, vehicle]
   # Tracked hazards that are neither workers nor machinery (R7 suspended load, R8 fire/smoke).
@@ -38,6 +39,11 @@ tracker:
   track_high_threshold: 0.45
   track_low_threshold: 0.10
   new_track_threshold: 0.55
+  # Crane loads, fire and smoke score far lower than people (often 0.3-0.5): with the
+  # people thresholds a load never started a track and R7 never saw it.
+  hazard_classes: [suspended_load, fire, smoke]
+  hazard_track_high_threshold: 0.25
+  hazard_new_track_threshold: 0.30
   match_threshold: 0.80
   buffer_seconds: 3.0
   # Re-link a worker's track after occlusions longer than the buffer: motion, size and
@@ -115,7 +121,8 @@ rules:
   r6_debounce_seconds: 3.0
   r7_debounce_seconds: 1.0
   r8_debounce_seconds: 2.0
-  r7_min_confidence: 0.35
+  # loads score 0.3-0.5; the fixed-structure filter (rules/r7.py) handles booms and masts
+  r7_min_confidence: 0.30
   # Fire/smoke must be confident: orange netting and dust are easy to mistake for it.
   r8_min_confidence: 0.45
   resolution_hysteresis_seconds: 2.0

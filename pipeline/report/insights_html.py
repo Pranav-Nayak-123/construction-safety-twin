@@ -160,11 +160,18 @@ def trace_svg(incident: IncidentRecord, *, near_wh: float, caution_wh: float) ->
 # ---------------------------------------------------------------------- leading indicators
 
 
+def exposure_tile(total_s: float) -> tuple[str, str]:
+    """Worker-time in a hazard: minutes once there is a minute of it, seconds before."""
+    if total_s >= 60:
+        return f"{total_s / 60:.1f} min", "worker-minutes in a hazard condition"
+    return f"{total_s:.1f} s", "worker-seconds in a hazard condition"
+
+
 def indicator_kpis(insights: InsightsFile) -> str:
     total = sum(e.exposure_s for e in insights.exposure)
     closest = next((c for c in insights.closest_approaches if c.rule_id.value == "R4"), None)
     tiles = [
-        ("Exposure", f"{total / 60:.1f} min", "worker-minutes in a hazard condition"),
+        ("Exposure", *exposure_tile(total)),
         (
             "Brief exposures",
             str(len(insights.brief_exposures)),

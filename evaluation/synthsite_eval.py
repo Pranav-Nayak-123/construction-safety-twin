@@ -169,15 +169,20 @@ def score_clip(clip: Path, scratch: Path, config: Any = None) -> dict[str, Any]:
         shutil.rmtree(job.work_dir, ignore_errors=True)
 
 
-def experiment_config(detector: Path | None) -> Any:
-    """The default config, or one whose stage-1 detector is an experimental build."""
-    if detector is None:
+def experiment_config(detector: Path | None, r7_min_confidence: float | None = None) -> Any:
+    """The default config, or one with an experimental detector and/or R7 threshold."""
+    if detector is None and r7_min_confidence is None:
         return None
     from shared.config import load_config
 
-    base = load_config()
-    stage1 = base.stage1.model_copy(update={"pretrained_fallback": str(detector)})
-    return base.model_copy(update={"stage1": stage1})
+    config = load_config()
+    if detector is not None:
+        stage1 = config.stage1.model_copy(update={"pretrained_fallback": str(detector)})
+        config = config.model_copy(update={"stage1": stage1})
+    if r7_min_confidence is not None:
+        rules = config.rules.model_copy(update={"r7_min_confidence": r7_min_confidence})
+        config = config.model_copy(update={"rules": rules})
+    return config
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -187,9 +192,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--split", choices=("all", "dev", "test"), default="all")
     parser.add_argument("--detector", type=Path, help="experimental detector weights")
     parser.add_argument("--tag", default="", help="suffix for result files, e.g. prompts-v2")
+    parser.add_argument("--r7-min-confidence", type=float, help="experimental R7 load threshold")
     args = parser.parse_args(argv)
 
-    config = experiment_config(args.detector)
+    config = experiment_config(args.detector, args.r7_min_confidence)
     suffix = f"-{args.tag}" if args.tag else ""
     clips_file = RESULTS / f"synthsite_r7_clips{suffix}.jsonl"
     labels = [

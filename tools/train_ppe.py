@@ -284,6 +284,12 @@ def main() -> None:
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--promote", type=Path, default=Path("artifacts/models/ppe/best.pt"))
+    parser.add_argument(
+        "--no-vest-weight",
+        type=float,
+        default=1.0,
+        help="extra loss weight on no_vest: vest-heavy data otherwise calls dark jackets vests",
+    )
     args = parser.parse_args()
 
     torch.manual_seed(SEED)
@@ -312,6 +318,7 @@ def main() -> None:
     head_loss = nn.CrossEntropyLoss(
         head_weights.to(device), ignore_index=IGNORE, label_smoothing=0.05
     )
+    torso_weights[TorsoLabel.NO_VEST] *= args.no_vest_weight
     torso_loss = nn.CrossEntropyLoss(
         torso_weights.to(device), ignore_index=IGNORE, label_smoothing=0.05
     )

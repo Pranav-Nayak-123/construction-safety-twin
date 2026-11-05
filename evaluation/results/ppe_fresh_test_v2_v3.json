@@ -1,0 +1,182 @@
+{
+  "artifacts\\models\\ppe\\best.pt": {
+    "original": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.7526,
+        "helmet_recall": 0.9795,
+        "no_helmet_precision": 0.9118,
+        "no_helmet_recall": 0.3875,
+        "macro_f1": 0.6975,
+        "abstain_rate": 0.0088,
+        "ece": 0.1297
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.9101,
+        "vest_recall": 0.9529,
+        "no_vest_precision": 0.8491,
+        "no_vest_recall": 0.7377,
+        "macro_f1": 0.8603,
+        "abstain_rate": 0.0,
+        "ece": 0.0312
+      }
+    },
+    "cctv_96px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.7079,
+        "helmet_recall": 0.9795,
+        "no_helmet_precision": 0.8636,
+        "no_helmet_recall": 0.2375,
+        "macro_f1": 0.5972,
+        "abstain_rate": 0.0088,
+        "ece": 0.2007
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.8962,
+        "vest_recall": 0.9647,
+        "no_vest_precision": 0.875,
+        "no_vest_recall": 0.6885,
+        "macro_f1": 0.8499,
+        "abstain_rate": 0.0,
+        "ece": 0.0359
+      }
+    },
+    "cctv_64px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.7035,
+        "helmet_recall": 0.9589,
+        "no_helmet_precision": 0.75,
+        "no_helmet_recall": 0.225,
+        "macro_f1": 0.5789,
+        "abstain_rate": 0.0133,
+        "ece": 0.2202
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.905,
+        "vest_recall": 0.9529,
+        "no_vest_precision": 0.8462,
+        "no_vest_recall": 0.7213,
+        "macro_f1": 0.8536,
+        "abstain_rate": 0.0,
+        "ece": 0.0352
+      }
+    },
+    "cctv_48px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.695,
+        "helmet_recall": 0.9521,
+        "no_helmet_precision": 0.7619,
+        "no_helmet_recall": 0.2,
+        "macro_f1": 0.5601,
+        "abstain_rate": 0.0221,
+        "ece": 0.2333
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.8696,
+        "vest_recall": 0.9412,
+        "no_vest_precision": 0.7872,
+        "no_vest_recall": 0.6066,
+        "macro_f1": 0.7946,
+        "abstain_rate": 0.0,
+        "ece": 0.0639
+      }
+    }
+  },
+  "artifacts\\checkpoints\\ppe\\effb0-v3\\promoted.pt": {
+    "original": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.9216,
+        "helmet_recall": 0.9658,
+        "no_helmet_precision": 0.9577,
+        "no_helmet_recall": 0.85,
+        "macro_f1": 0.9219,
+        "abstain_rate": 0.0088,
+        "ece": 0.024
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.9657,
+        "vest_recall": 0.9941,
+        "no_vest_precision": 0.9821,
+        "no_vest_recall": 0.9016,
+        "macro_f1": 0.9599,
+        "abstain_rate": 0.0,
+        "ece": 0.0116
+      }
+    },
+    "cctv_96px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.8868,
+        "helmet_recall": 0.9658,
+        "no_helmet_precision": 0.9394,
+        "no_helmet_recall": 0.775,
+        "macro_f1": 0.887,
+        "abstain_rate": 0.0044,
+        "ece": 0.0328
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.9548,
+        "vest_recall": 0.9941,
+        "no_vest_precision": 0.9815,
+        "no_vest_recall": 0.8689,
+        "macro_f1": 0.9479,
+        "abstain_rate": 0.0,
+        "ece": 0.0274
+      }
+    },
+    "cctv_64px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.8509,
+        "helmet_recall": 0.9384,
+        "no_helmet_precision": 0.875,
+        "no_helmet_recall": 0.7,
+        "macro_f1": 0.8351,
+        "abstain_rate": 0.0044,
+        "ece": 0.0678
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.9438,
+        "vest_recall": 0.9882,
+        "no_vest_precision": 0.9623,
+        "no_vest_recall": 0.8361,
+        "macro_f1": 0.9301,
+        "abstain_rate": 0.0,
+        "ece": 0.0227
+      }
+    },
+    "cctv_48px": {
+      "head": {
+        "n": 226,
+        "helmet_precision": 0.821,
+        "helmet_recall": 0.911,
+        "no_helmet_precision": 0.8226,
+        "no_helmet_recall": 0.6375,
+        "macro_f1": 0.791,
+        "abstain_rate": 0.0088,
+        "ece": 0.1228
+      },
+      "torso": {
+        "n": 231,
+        "vest_precision": 0.9483,
+        "vest_recall": 0.9706,
+        "no_vest_precision": 0.9123,
+        "no_vest_recall": 0.8525,
+        "macro_f1": 0.9203,
+        "abstain_rate": 0.0,
+        "ece": 0.04
+      }
+    }
+  }
+}
