@@ -1,0 +1,7 @@
+{"filename": "veo3.1_0001.mp4", "tier": "2", "actual_unsafe": false, "predicted_unsafe": false, "r7_incidents": 0, "r7_status": "not_applicable", "frames_with_load": 0, "frames": 120, "camera": "fixed", "seconds": 24.2}
+{"filename": "veo3.1_0002.mp4", "tier": "1", "actual_unsafe": true, "predicted_unsafe": true, "r7_incidents": 10, "r7_status": "evaluated_alert", "frames_with_load": 695, "frames": 120, "camera": "fixed", "seconds": 13.4}
+{"filename": "veo3.1_0011.mp4", "tier": "2", "actual_unsafe": true, "predicted_unsafe": false, "r7_incidents": 0, "r7_status": "not_applicable", "frames_with_load": 0, "frames": 120, "camera": "fixed", "seconds": 14.0}
+{"filename": "veo3.1_0012.mp4", "tier": "1", "actual_unsafe": false, "predicted_unsafe": false, "r7_incidents": 0, "r7_status": "evaluated_clear", "frames_with_load": 35, "frames": 120, "camera": "stabilize", "seconds": 31.7}
+{"filename": "veo3.1_0015.mp4", "tier": "1", "actual_unsafe": true, "predicted_unsafe": false, "r7_incidents": 0, "r7_status": "evaluated_clear", "frames_with_load": 885, "frames": 120, "camera": "fixed", "seconds": 19.6}
+{"filename": "veo3.1_0018.mp4", "tier": "1", "actual_unsafe": true, "predicted_unsafe": false, "r7_incidents": 0, "r7_status": "not_applicable", "frames_with_load": 0, "frames": 120, "camera": "fixed", "seconds": 14.1}
+{"filename": "veo3.1_0023.mp4", "tier": "2", "actual_unsafe": true, "predicted_unsafe": true, "r7_incidents": 3, "r7_status": "evaluated_alert", "frames_with_load": 378, "frames": 120, "camera": "fixed", "seconds": 13.8}

@@ -33,7 +33,7 @@
       "question": "How many restricted-zone intrusions were there?",
       "passed": false,
       "misses": [
-        "forbidden /\\b25\\b(?! *worker)/"
+        "forbidden /(?<!/)\\b25\\b(?! *worker)(?!/)/"
       ],
       "source": "register",
       "check_failures": [],

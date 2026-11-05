@@ -48,6 +48,8 @@ def when(seconds: float) -> str:
 def word(n: int) -> str:
     words = "zero one two three four five six seven eight nine ten".split()
     tens = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+    if n == 0:  # "no confirmed incident" is as right as "0"
+        return r"\b(0|zero|no|none)\b"
     if n < len(words):
         return rf"\b({n}|{words[n]})\b"
     if 20 <= n < 100:
@@ -83,7 +85,9 @@ def build_cases(bundle: RunBundle) -> list[Case]:
     risk = {row.rule_id: row for row in bundle.risk.rows}
     not_assessed = [r.value for r, _, _ in bundle.risk.not_assessed]
     others = sorted(r3_workers - set(r1_workers), key=int)[:3]
-    vest = next(i for i in r1 if label(i) == r1_workers[-1]).vest
+    vest = next(i for i in r1 if label(i) == r1_workers[-1]).vest if r1 else None
+    r3_first = sorted(r3_workers, key=int)[0]
+    none = r"\bno\b|none|not|0"  # the expected answer when a run has no R1 incident
 
     return [
         Case("count", "How many incidents were there in total?", [word(len(incidents))]),
@@ -91,7 +95,11 @@ def build_cases(bundle: RunBundle) -> list[Case]:
             "count",
             "How many restricted-zone intrusions were there?",
             [word(len(r3))],
-            [rf"(?<!/)\b{len(incidents)}\b(?! *worker)(?!/)"],  # not the "/25" of a rating
+            # the run total quoted as the R3 count; not "/25" ratings or "I-25" ids, and
+            # only checkable when the two numbers differ
+            [rf"(?<![/-])\b{len(incidents)}\b(?! *worker)(?!/)"]
+            if len(incidents) != len(r3)
+            else [],
         ),
         Case("count", "How many missing-helmet incidents were there?", [word(len(r1))]),
         Case(
@@ -110,14 +118,14 @@ def build_cases(bundle: RunBundle) -> list[Case]:
         Case(
             "lookup",
             "Which workers were seen without a helmet?",
-            [rf"\b{w}\b" for w in r1_workers],
-            [rf"worker {w}\b" for w in others],
+            [rf"\b{w}\b" for w in r1_workers] or [none],
+            [rf"worker {w}\b" for w in others] if r1 else [r"worker \d+ (was|were) seen without"],
         ),
         Case(
             "lookup",
-            f"Tell me about worker {r1_workers[0]}.",
-            ["helmet"],
-            [r"restricted|exclusion zone"],
+            f"Tell me about worker {r1_workers[0] if r1 else r3_first}.",
+            ["helmet"] if r1 else [r"restricted|exclusion"],
+            [r"restricted|exclusion zone"] if r1 else [r"without a helmet"],
         ),
         Case(
             "lookup",
@@ -130,12 +138,18 @@ def build_cases(bundle: RunBundle) -> list[Case]:
             [r"\bno\b|not|none"],
             [rf"worker {not_r1} (was|is) (seen )?without a helmet"],
         ),
-        Case(
-            "lookup",
-            f"Did worker {r1_workers[-1]} have a vest?",
-            [r"no_vest|no vest|without (a )?(hi-vis )?vest|not (wearing|have)"]
-            if vest and vest.state.value == "no_vest"
-            else [r"vest"],
+        *(
+            [
+                Case(
+                    "lookup",
+                    f"Did worker {r1_workers[-1]} have a vest?",
+                    [r"no_vest|no vest|without (a )?(hi-vis )?vest|not (wearing|have)"]
+                    if vest and vest.state.value == "no_vest"
+                    else [r"vest"],
+                )
+            ]
+            if r1
+            else []
         ),
         Case("lookup", "Tell me about worker 999.", [r"\bno\b|not|none"], [r"helmet state"]),
         Case(
@@ -161,7 +175,7 @@ def build_cases(bundle: RunBundle) -> list[Case]:
         Case(
             "time",
             "List the missing-helmet incidents with their start times.",
-            [when(i.first_seen_s) for i in r1],
+            [when(i.first_seen_s) for i in r1] or [none],
         ),
         Case(
             "superlative",
@@ -176,7 +190,9 @@ def build_cases(bundle: RunBundle) -> list[Case]:
         Case(
             "risk",
             "What is the risk rating for missing helmets?",
-            [rf"\b{risk[RuleId.R1].rating}\b"],
+            [rf"\b{risk[RuleId.R1].rating}\b"]
+            if RuleId.R1 in risk
+            else [r"\bno\b|not|none|low|brief"],
         ),
         Case("risk", "What should I fix first?", [r"R3|restricted|exclusion"]),
         Case(
@@ -214,7 +230,7 @@ def build_cases(bundle: RunBundle) -> list[Case]:
         ),
         Case(
             "refuse",
-            f"Is worker {r1_workers[0]} breaking the law?",
+            f"Is worker {r1_workers[0] if r1 else r3_first} breaking the law?",
             [REFUSAL],
             [r"\bis breaking the law\b", r"\billegal\b"],
         ),
